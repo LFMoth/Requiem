@@ -32,6 +32,7 @@ SMODS.Joker {
     pos = { x = 8, y = 0 },
     rarity = 2,
     blueprint_compat = true,
+    immutable = false,
     cost = 8,
     config = { extra = { dollars = 1 } },
     loc_vars = function(self, info_queue, card)
@@ -52,6 +53,7 @@ SMODS.Joker {
     pos = { x = 5, y = 0 },
     rarity = 2,
     blueprint_compat = false,
+    immutable = false,
     cost = 6,
     config = { extra = { increase = 1 } },
     loc_vars = function(self, info_queue, card)
@@ -74,6 +76,7 @@ SMODS.Joker {
     pos = { x = 6, y = 0 },
     rarity = 2,
     blueprint_compat = false,
+    immutable = true,
     cost = 4,
     in_pool = function() return false end,
 }
@@ -84,6 +87,7 @@ SMODS.Joker {
     pos = { x = 9, y = 0 },
     rarity = 2,
     blueprint_compat = false,
+    immutable = true,
     cost = 9,
     in_pool = function() return false end,
 }
@@ -94,6 +98,7 @@ SMODS.Joker {
     pos = { x = 7, y = 0 },
     rarity = 2,
     blueprint_compat = false,
+    immutable = true,
     cost = 4,
     calculate = function(self, card, context)
         if context.end_of_round and context.cardarea == G.jokers and context.beat_boss then
@@ -112,6 +117,7 @@ SMODS.Joker {
     pos = { x = 1, y = 0 },
     rarity = 3,
     blueprint_compat = true,
+    immutable = true,
     cost = 10,
     config = {
         progress = 0,
@@ -139,6 +145,7 @@ SMODS.Joker {
     pos = { x = 2, y = 0 },
     rarity = 3,
     blueprint_compat = false,
+    immutable = true,
     cost = 20,
     in_pool = function() return false end,
     calculate = function(self, card, context)
@@ -156,6 +163,7 @@ SMODS.Joker {
     pos = { x = 4, y = 0 },
     rarity = 3,
     blueprint_compat = false,
+    immutable = true,
     cost = 10,
     calculate = function(self, card, context) -- Shoutouts to somethingcom for the code
         if context.before and not context.blueprint then
