@@ -52,7 +52,7 @@ SMODS.Joker {
     atlas = "jokers",
     pos = { x = 5, y = 0 },
     rarity = 2,
-    blueprint_compat = false,
+    blueprint_compat = true,
     immutable = false,
     cost = 6,
     config = { extra = { increase = 1 } },
