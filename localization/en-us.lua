@@ -76,17 +76,34 @@ return {
                 name = "Shingle Card",
                 text = {
                     {
-                    "Grants {C:attention}Mult.{} equal to {C:attention}1.2{} times",
-                    "the current {C:attention}durability{}",
-                    "{C:attention}Durability{} goes down",
-                    "every time its played",
+                        "Grants {C:attention}Mult.{} equal to {C:attention}1.2{} times",
+                        "the current {C:attention}durability{}",
+                        "{C:attention}Durability{} goes down",
+                        "every time its played",
                     },
                     {
-                    "{C:inactive}({}{C:attention}#1#{}{C:inactive} durability remaining){}",
-                    "{C:inactive}(Currently {}{C:mult}+#2#{}{C:inactive}){}",
+                        "{C:inactive}({}{C:attention}#1#{}{C:inactive} durability remaining){}",
+                        "{C:inactive}(Currently {}{C:mult}+#2#{}{C:inactive}){}",
                     },
                 },
             },
+        },
+        Tarot = {
+            c_req_colossus = {
+                name = "Colossus",
+                text = {
+                    {
+                        "Enhances {C:attention}#1#{} selected",
+                        "card into a",
+                        "{C:attention}#2#",
+                    },
+                    {
+                        "Increases durability of {C:attention}#1#{}",
+                        "selected {C:attention}#2#{}",
+                        "by {C:attention}#3#{}",
+                    },
+                },
+            }
         }
     }
 }
