@@ -3,7 +3,7 @@
 A balatro mod that adds some smart and silly additions
 (Requires [CryptLib](https://github.com/SpectralPack/Cryptlib))
 Currently adds:
-- 6 Jokers
+- 7 Jokers
 - 1 Enhancement
 
 Planned content:
