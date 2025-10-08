@@ -35,13 +35,13 @@ return {
             j_req_poptart = {
                 name = "Pop-tart",
                 text = {
-                    "{C:inactive}(Currently not functional){}",
+                    "{C:inactive}(To be implemented){}",
                 },
             },
             j_req_forecast = {
                 name = "Forecast",
                 text = {
-                    "{C:inactive}(Currently not functional){}",
+                    "{C:inactive}(To be implemented){}",
                 },
             },
             j_req_heister = {

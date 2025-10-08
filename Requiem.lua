@@ -75,6 +75,7 @@ SMODS.Joker {
     rarity = 2,
     blueprint_compat = false,
     cost = 4,
+    in_pool = function() return false end,
 }
 -- Forecast (WIP)
 SMODS.Joker {
@@ -84,6 +85,7 @@ SMODS.Joker {
     rarity = 2,
     blueprint_compat = false,
     cost = 9,
+    in_pool = function() return false end,
 }
 -- Extreme Joker
 SMODS.Joker {
@@ -130,7 +132,7 @@ SMODS.Joker {
         end
     end
 }
--- Macho Joker Cat (WIP)
+-- Macho Joker Cat
 SMODS.Joker {
     key = "machocat",
     atlas = "jokers",
@@ -138,6 +140,7 @@ SMODS.Joker {
     rarity = 3,
     blueprint_compat = false,
     cost = 20,
+    in_pool = function() return false end,
     calculate = function(self, card, context)
         if context.drawing_cards then
             SMODS.add_card { set = "Base", enhancement = "m_req_cat", area = G.hand }
