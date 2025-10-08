@@ -28,6 +28,17 @@ SMODS.Atlas {
 -- Heister
 SMODS.Joker {
     key = "heister",
+    cry_credits = {
+		idea = {
+			"LFMoth",
+		},
+		art = {
+			"LFMoth",
+		},
+		code = {
+			"LFMoth",
+		},
+	},
     atlas = "jokers",
     pos = { x = 8, y = 0 },
     rarity = 2,
@@ -49,6 +60,17 @@ SMODS.Joker {
 -- Retro Joker
 SMODS.Joker {
     key = "retro",
+    cry_credits = {
+		idea = {
+			"LFMoth",
+		},
+		art = {
+			"LFMoth",
+		},
+		code = {
+			"LFMoth",
+		},
+	},
     atlas = "jokers",
     pos = { x = 5, y = 0 },
     rarity = 2,
@@ -72,6 +94,17 @@ SMODS.Joker {
 -- Pop-tart
 SMODS.Joker {
     key = "poptart",
+    cry_credits = {
+		idea = {
+			"starlightclovers",
+		},
+		art = {
+			"LFMoth",
+		},
+		code = {
+			"LFMoth",
+		},
+	},
     atlas = "jokers",
     pos = { x = 6, y = 0 },
     rarity = 2,
@@ -100,6 +133,17 @@ SMODS.Joker {
 -- Forecast (WIP)
 SMODS.Joker {
     key = "forecast",
+    cry_credits = {
+		idea = {
+			"LFMoth",
+		},
+		art = {
+			"LFMoth",
+		},
+		code = {
+			"LFMoth",
+		},
+	},
     atlas = "jokers",
     pos = { x = 9, y = 0 },
     rarity = 2,
@@ -111,6 +155,17 @@ SMODS.Joker {
 -- Extreme Joker
 SMODS.Joker {
     key = "extreme",
+     cry_credits = {
+		idea = {
+			"LFMoth",
+		},
+		art = {
+			"LFMoth",
+		},
+		code = {
+			"LFMoth",
+		},
+	},
     atlas = "jokers",
     pos = { x = 7, y = 0 },
     rarity = 2,
@@ -130,6 +185,17 @@ SMODS.Joker {
 -- Joker Cat
 SMODS.Joker {
     key = "cat",
+    cry_credits = {
+		idea = {
+			"LFMoth",
+		},
+		art = {
+			"LFMoth",
+		},
+		code = {
+			"LFMoth",
+		},
+	},
     atlas = "jokers",
     pos = { x = 1, y = 0 },
     rarity = 3,
@@ -158,6 +224,17 @@ SMODS.Joker {
 -- Macho Joker Cat
 SMODS.Joker {
     key = "machocat",
+    cry_credits = {
+		idea = {
+			"LFMoth",
+		},
+		art = {
+			"LFMoth",
+		},
+		code = {
+			"LFMoth",
+		},
+	},
     atlas = "jokers",
     pos = { x = 2, y = 0 },
     rarity = 3,
@@ -175,6 +252,17 @@ SMODS.Joker {
 -- Wish
 SMODS.Joker {
     key = "wish",
+    cry_credits = {
+		idea = {
+			"LFMoth",
+		},
+		art = {
+			"LFMoth",
+		},
+		code = {
+			"somethingcom",
+		},
+	},
     atlas = "jokers",
     pos = { x = 4, y = 0 },
     rarity = 3,
@@ -218,6 +306,17 @@ SMODS.Joker {
 
 SMODS.Enhancement {
     key = 'cat',
+    cry_credits = {
+		idea = {
+			"LFMoth",
+		},
+		art = {
+			"LFMoth",
+		},
+		code = {
+			"LFMoth + somethingcom",
+		},
+	},
     atlas = "enhancements",
     pos = { x = 1, y = 0 },
     config = { mult = 1 },
