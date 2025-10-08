@@ -1,0 +1,76 @@
+return {
+    descriptions = {
+        Joker = {
+            j_req_cat = {
+                name = "Cat Joker",
+                text = {
+                    "When drawing cards",
+                    "deploy a {C:attention}Card Cat{}",
+                    "into your hand",
+                    "evolves after 2 boss blinds {C:inactive}(#1#/2){}",
+                },
+            },
+            j_req_machocat = {
+                name = "Macho Cat Joker",
+                text = {
+                    "When drawing cards",
+                    "deploy two {C:attention}Card Cats{}",
+                    "into your hand",
+                },
+            },
+            j_req_wish = {
+                name = "Wish",
+                text = {
+                    "Playing your least played {C:attention}hand{}",
+                    "levels it up",
+                },
+            },
+            j_req_retro = {
+                name = "Retro Joker",
+                text = {
+                    "Played even-numbered cards",
+                    "increase their rank by {C:attention}#1#{}",
+                },
+            },
+            j_req_poptart = {
+                name = "Pop-tart",
+                text = {
+                    "{C:inactive}(Currently not functional){}",
+                },
+            },
+            j_req_forecast = {
+                name = "Forecast",
+                text = {
+                    "{C:inactive}(Currently not functional){}",
+                },
+            },
+            j_req_heister = {
+                name = "Heister",
+                text = {
+                    "{C:attention}Gold{} cards count",
+                    "as {C:attention}Steel{} cards",
+                },
+            },
+            j_req_extreme = {
+                name = "Extreme Joker",
+                text = {
+                    "Beating the boss blind",
+                    "randomizes this",
+                    "card's {C:attention}edition{}",
+                    "{C:inactive}(Currently not functional){}",
+                },
+            },
+
+        },
+        Enhancement = {
+            m_req_cat = {
+                name = "Card Cat",
+                text = {
+                    "{C:mult}+#1#{} Mult.",
+                    "suitless, counts as a {C:attention}Jack{}",
+                    "{C:mult}self-destructs after end of round{}",
+                },
+            },
+        }
+    }
+}

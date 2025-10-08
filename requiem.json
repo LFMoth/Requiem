@@ -1,0 +1,19 @@
+{
+    "name": "Requiem",
+    "id": "req",
+    "version": "0.1",
+    "website_url": "https://github.com/LFMoth/Requiem",
+    "description": "A Balatro Mod with smart and silly additions. Currently adds new jokers.",
+    "prefix": "req",
+    "author": ["LFMoth"],
+    "main_file": "Requiem.lua",
+    "priority": 666,
+    "badge_colour": "FE0001",
+    "dependencies": [
+        "Steamodded (>=1.0.0~BETA-0827)",
+        "Cryptlib"
+    ],
+    "conflicts": [
+    ],
+    "allow_redistribution": true
+}
