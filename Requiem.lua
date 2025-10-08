@@ -80,7 +80,7 @@ SMODS.Joker {
     cost = 4,
     config = { extra = { mult = 0, dollars = 3, uses = 2 } },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.mult, card.ability.extra.dollars } }
+        return { vars = { card.ability.extra.mult, card.ability.extra.dollars, card.ability.extra.uses } }
     end,
     calculate = function(self, card, context)
         if context.final_scoring_step and context.cardarea == G.play then

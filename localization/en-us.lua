@@ -35,7 +35,9 @@ return {
             j_req_poptart = {
                 name = "Pop-tart",
                 text = {
-                    "{C:inactive}(To be implemented){}",
+                    "Mult. is set to {C:mult}#1#{} after scoring",
+                    "Gain {C:money}$#2#{} when a card is scored",
+                    "{C:inactive}(Self destructs in #3# hands){}",
                 },
             },
             j_req_forecast = {
