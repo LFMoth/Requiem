@@ -75,8 +75,8 @@ SMODS.Joker {
     atlas = "jokers",
     pos = { x = 6, y = 0 },
     rarity = 2,
-    blueprint_compat = false,
-    immutable = true,
+    blueprint_compat = true,
+    immutable = false,
     cost = 4,
     config = { extra = { mult = 0, dollars = 3, uses = 2 } },
     loc_vars = function(self, info_queue, card)
