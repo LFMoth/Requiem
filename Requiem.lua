@@ -337,3 +337,41 @@ SMODS.Enhancement {
         end
     end
 }
+SMODS.Enhancement {
+    key = 'shingle',
+    cry_credits = {
+		idea = {
+			"LFMoth",
+		},
+		art = {
+			"LFMoth",
+		},
+		code = {
+			"LFMoth",
+		},
+	},
+    atlas = "enhancements",
+    pos = { x = 2, y = 0 },
+    config = { durability = 3 },
+    replace_base_card = false,
+    no_rank = false,
+    overrides_base_rank = false,
+    no_suit = false,
+    always_scores = true,
+    shatters = true,
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.durability, card.ability.durability * 1.2 } }
+    end,
+    calculate = function(self, card, context)
+        if context.final_scoring_step and context.cardarea == G.play then
+            card.ability.durability = card.ability.durability - 1
+            if card.ability.durability < 1 then
+                SMODS.destroy_cards(card)
+            end
+        end
+        if context.cardarea == G.play and context.main_scoring then
+            return { mult = card.ability.durability * 1.2 }
+        end
+    end
+}
+

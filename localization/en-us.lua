@@ -72,6 +72,20 @@ return {
                     "{C:mult}self-destructs after end of round{}",
                 },
             },
+            m_req_shingle = {
+                name = "Card Cat",
+                text = {
+                    {
+                    "Grants {C:attention}Mult.{} equal to {C:attention}1.2{} times",
+                    "the current {C:attention}durability{}",
+                    "{C:attention}Durability{} goes down every time its played",
+                    },
+                    {
+                    "{C:inactive}({C:attention}#1#{} durability remaining){}",
+                    "{C:inactive}(Currently {C:mult}+#2#{}){}",
+                    },
+                },
+            },
         }
     }
 }
