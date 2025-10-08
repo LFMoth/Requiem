@@ -69,7 +69,7 @@ SMODS.Joker {
         end
     end
 }
--- Pop-tart (WIP)
+-- Pop-tart
 SMODS.Joker {
     key = "poptart",
     atlas = "jokers",
@@ -78,7 +78,24 @@ SMODS.Joker {
     blueprint_compat = false,
     immutable = true,
     cost = 4,
-    in_pool = function() return false end,
+    config = { extra = { mult = 0, dollars = 3, uses = 2 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.mult, card.ability.extra.dollars } }
+    end,
+    calculate = function(self, card, context)
+        if context.final_scoring_step and context.cardarea == G.play then
+            card.ability.extra.uses = card.ability.extra.uses - 1
+            if card.ability.extra.uses < 1 then
+                SMODS.destroy_cards(card)
+            end
+            return { func = function() mod_mult(card.ability.extra.mult) end }            
+        end
+        if context.individual and context.cardarea == G.play then
+            return {
+                dollars = card.ability.extra.dollars
+            }
+        end
+    end
 }
 -- Forecast (WIP)
 SMODS.Joker {
@@ -155,8 +172,7 @@ SMODS.Joker {
         end
     end
 }
--- Crazed Macho Joker Cat (WIP)
--- Wish (WIP)
+-- Wish
 SMODS.Joker {
     key = "wish",
     atlas = "jokers",
