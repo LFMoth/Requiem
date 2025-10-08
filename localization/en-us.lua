@@ -57,7 +57,6 @@ return {
                     "Beating the boss blind",
                     "randomizes this",
                     "card's {C:attention}edition{}",
-                    "{C:inactive}(Currently not functional){}",
                 },
             },
 
