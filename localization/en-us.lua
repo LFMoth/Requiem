@@ -76,13 +76,17 @@ return {
                 name = "Shingle Card",
                 text = {
                     {
-                        "Grants {C:attention}Mult.{} equal to {C:attention}1.2{} times",
-                        "the current {C:attention}durability{}",
-                        "{C:attention}Durability{} goes down",
-                        "every time its played",
+                        "{}{C:mult}+#2#{} Mult.",
                     },
                     {
-                        "{C:inactive}({}{C:attention}#1#{}{C:inactive} durability remaining){}",
+                        
+                        "{C:attention}Durability{} goes down",
+                        "every time its played",
+                        "{C:inactive}({}{C:attention}#1#{}{C:inactive} uses remaining){}",
+                    },
+                    {
+                        "Grants {C:mult}Mult.{} equal to {C:attention}1.2{} times",
+                        "the current {C:attention}durability{}",
                         "{C:inactive}(Currently {}{C:mult}+#2#{}{C:inactive}){}",
                     },
                 },
