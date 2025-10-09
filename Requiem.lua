@@ -13,3 +13,9 @@ SMODS.load_file("items/atlases.lua")()
 SMODS.load_file("items/jokers.lua")()
 SMODS.load_file("items/enhancements.lua")()
 SMODS.load_file("items/tarots.lua")()
+
+-- Entwopy
+if next(SMODS.find_mod("entr")) then -- Uses the mod's ID
+SMODS.load_file("items/crossmod/entropy/enhancements.lua")()
+    SMODS.load_file("items/crossmod/entropy/frauds.lua")()
+end

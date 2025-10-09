@@ -159,10 +159,19 @@ return {
                     },
                 },
             },
+            m_req_exalted = {
+                name = "Exalted Card",
+                text = {
+                    {
+                        "{C:chips}+#1#{} extra chips",
+                        "Uses {C:chips}#2#{} hand",
+                    },
+                },
+            },
         },
         Tarot = {
             c_req_colossus = {
-                name = "Colossus",
+                name = "The Colossus",
                 text = {
                     {
                         "Enhances {C:attention}#1#{} selected",
@@ -177,13 +186,23 @@ return {
                 },
             },
             c_req_archon = {
-                name = "Archon",
+                name = "The Archon",
                 text = {
                     {
                         "Creates a random",
                         "{C:attention}Archon Shard{}",
                         "{C:inactive}(Must have room)",
                     },
+                },
+            }
+        },
+        Fraud = {
+            c_req_knight = {
+                name = "The Knight",
+                text = {
+                    "Enhances {C:attention}#1#{} selected",
+                    "card into a",
+                    "{C:attention}#2#",
                 },
             }
         }
