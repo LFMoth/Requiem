@@ -229,6 +229,9 @@ SMODS.Joker {
     cost = 5,
     atlas = "jokers",
     pos = { x = 3, y = 0 },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_CENTERS['c_death']
+    end,
     calculate = function(self, card, context)
         if context.joker_main and G.GAME.current_round.hands_left == 0 then
             SMODS.add_card({key = "c_death"})

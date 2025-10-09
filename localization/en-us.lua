@@ -223,6 +223,14 @@ return {
                     "card into a",
                     "{C:attention}#2#",
                 },
+            },
+            c_req_citadel = {
+                name = "The Citadel",
+                text = {
+                    "Destroys {C:attention}#1#{} selected",
+                    "{C:attention}Shingle Card{} and grats its",
+                    "{C:attention}Durability{} as {C:money}${}"
+                },
             }
         }
     }

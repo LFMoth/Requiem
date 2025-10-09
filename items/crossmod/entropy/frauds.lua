@@ -74,6 +74,28 @@ SMODS.Consumable {
         delay(0.5)
     end,
     can_use = function(self, card)
-        return G.hand and #G.hand.highlighted > 0 and #G.hand.highlighted <= card.ability.max_highlighted   
+        return G.hand and #G.hand.highlighted > 0 and #G.hand.highlighted <= card.ability.max_highlighted
+    end
+}
+SMODS.Consumable {
+    key = 'citadel',
+    set = 'Fraud',
+    atlas = 'frauds',
+    inversion = "c_req_colossus",
+    pos = { x = 2, y = 0 },
+    config = { max_highlighted = 1 },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_CENTERS['m_req_shingle']
+        return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = 'm_req_shingle' } } }
+    end,
+    use = function(self, card, area, copier)
+        if SMODS.has_enhancement(G.hand.highlighted[i], "m_req_shingle") == true then
+            local durability = G.hand.highlighted[i].ability.durability
+            SMODS.destroy_cards(G.hand.highlighted[i])
+            return { dollars = durability }
+        end
+    end,
+    can_use = function(self, card)
+        return G.hand and #G.hand.highlighted > 0 and #G.hand.highlighted <= card.ability.max_highlighted
     end
 }
