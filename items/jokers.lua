@@ -246,7 +246,7 @@ SMODS.Joker {
     cost = 7,
     atlas = "jokers",
     pos = { x = 4, y = 1 },
-    config = { extra = { chips = 3 } },
+    config = { extra = { chips = 20 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.chips } }
     end,

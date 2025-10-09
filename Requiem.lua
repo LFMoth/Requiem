@@ -3,7 +3,8 @@ SMODS.load_file("lib/hooks.lua")()
 -- enable quantum enhancements for enhancement shenanigans
 SMODS.current_mod.optional_features = function()
     return {
-        quantum_enhancements = true
+        quantum_enhancements = true,
+        post_trigger = true
     }
 end
 
