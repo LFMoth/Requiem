@@ -40,12 +40,13 @@ SMODS.Consumable {
                 delay = 0.1,
                 func = function()
                     if SMODS.has_enhancement(G.hand.highlighted[i], "m_req_shingle") == false then
-                    G.hand.highlighted[i]:set_ability(card.ability.mod_conv)
-                    return true
+                        G.hand.highlighted[i]:set_ability(card.ability.mod_conv)
+                        return true
                     end
                     if SMODS.has_enhancement(G.hand.highlighted[i], "m_req_shingle") == true then
-                    G.hand.highlighted[i].ability.durability = G.hand.highlighted[i].ability.durability + card.ability.durability_inc
-                    return true
+                        G.hand.highlighted[i].ability.durability = G.hand.highlighted[i].ability.durability +
+                            card.ability.durability_inc
+                        return true
                     end
                 end
             }))
@@ -77,4 +78,37 @@ SMODS.Consumable {
         return G.hand and #G.hand.highlighted > 0 and #G.hand.highlighted <= card.ability.max_highlighted
     end
 
+}
+SMODS.Consumable {
+    key = 'archon',
+    set = 'Tarot',
+    atlas = "tarots",
+    pos = { x = 3, y = 0 },
+    use = function(self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.4,
+            func = function()
+                play_sound('timpani')
+                SMODS.add_card(
+                    {
+                        key = pseudorandom_element(
+                            {
+                                "j_req_archonshardCrimson",
+                                "j_req_archonshardGreen",
+                                "j_req_archonshardSilver",
+                                "j_req_archonshardGold"
+                            }
+                        )
+                    }
+                )
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+        delay(0.6)
+    end,
+    can_use = function(self, card)
+        return G.jokers and #G.jokers.cards < G.jokers.config.card_limit
+    end
 }

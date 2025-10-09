@@ -1,6 +1,158 @@
 -- Jokers
 -- Common Jokers
-
+-- Archon shards
+SMODS.Joker {
+    key = "archonshardCrimson",
+    cry_credits = {
+		idea = {
+			"LFMoth",
+		},
+		art = {
+			"LFMoth",
+		},
+		code = {
+			"LFMoth",
+		},
+	},
+    atlas = "jokers",
+    pos = { x = 0, y = 1 },
+    rarity = 2,
+    blueprint_compat = true,
+    immutable = false,
+    cost = 1,
+    in_pool = function() return false end,
+    pools = {
+        ["archon"] = true,
+    },
+    config = { extra = { Xmult = 2, suit = 'Hearts' }, },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.Xmult, localize(card.ability.extra.suit, 'suits_singular') } }
+    end,
+    calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play and
+            context.other_card:is_suit(card.ability.extra.suit) then
+            return {
+                Xmult = card.ability.extra.Xmult
+            }
+        end
+        if context.final_scoring_step and context.cardarea == G.jokers then
+            SMODS.destroy_cards(card)
+        end
+    end
+}
+SMODS.Joker {
+    key = "archonshardGreen",
+    cry_credits = {
+		idea = {
+			"LFMoth",
+		},
+		art = {
+			"LFMoth",
+		},
+		code = {
+			"LFMoth",
+		},
+	},
+    atlas = "jokers",
+    pos = { x = 1, y = 1 },
+    rarity = 2,
+    blueprint_compat = true,
+    immutable = false,
+    cost = 1,
+    in_pool = function() return false end,
+    pools = {
+        ["archon"] = true,
+    },
+    config = { extra = { Xmult = 2, suit = 'Clubs' }, },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.Xmult, localize(card.ability.extra.suit, 'suits_singular') } }
+    end,
+    calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play and
+            context.other_card:is_suit(card.ability.extra.suit) then
+            return {
+                Xmult = card.ability.extra.Xmult
+            }
+        end
+        if context.final_scoring_step and context.cardarea == G.jokers then
+            SMODS.destroy_cards(card)
+        end
+    end
+}
+SMODS.Joker {
+    key = "archonshardSilver",
+    cry_credits = {
+		idea = {
+			"LFMoth",
+		},
+		art = {
+			"LFMoth",
+		},
+		code = {
+			"LFMoth",
+		},
+	},
+    atlas = "jokers",
+    pos = { x = 2, y = 1 },
+    rarity = 2,
+    blueprint_compat = true,
+    immutable = false,
+    cost = 1,
+    in_pool = function() return false end,
+    pools = {
+        ["archon"] = true,
+    },
+    config = { extra = { Xmult = 2, suit = 'Clubs' }, },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.Xmult, localize(card.ability.extra.suit, 'suits_singular') } }
+    end,
+    calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play and
+            context.other_card:is_suit(card.ability.extra.suit) then
+            return {
+                Xmult = card.ability.extra.Xmult
+            }
+        end
+        if context.final_scoring_step and context.cardarea == G.jokers then
+            SMODS.destroy_cards(card)
+        end
+    end
+}
+SMODS.Joker {
+    key = "archonshardGold",
+    cry_credits = {
+		idea = {
+			"LFMoth",
+		},
+		art = {
+			"LFMoth",
+		},
+		code = {
+			"LFMoth",
+		},
+	},
+    atlas = "jokers",
+    pos = { x = 3, y = 1 },
+    rarity = 2,
+    blueprint_compat = true,
+    immutable = false,
+    cost = 1,
+    config = { extra = { Xmult = 2, suit = 'Diamonds' }, },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.Xmult, localize(card.ability.extra.suit, 'suits_singular') } }
+    end,
+    calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play and
+            context.other_card:is_suit(card.ability.extra.suit) then
+            return {
+                Xmult = card.ability.extra.Xmult
+            }
+        end
+        if context.final_scoring_step and context.cardarea == G.jokers then
+            SMODS.destroy_cards(card)
+        end
+    end
+}
 -- Uncommon Jokers
 
 -- Heister

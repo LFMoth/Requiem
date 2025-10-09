@@ -4,14 +4,13 @@ A balatro mod that adds some smart and silly additions
 (Requires [CryptLib](https://github.com/SpectralPack/Cryptlib))
 
 Currently adds:
-- 7 Jokers
-- 1 Tarot Card
+- 11 Jokers
+- 2 Tarot Cards
 - 2 Enhancements
 
 Planned content:
 - More Jokers
-- Certain joker reworks eventually (once its possible)
-- New tarots
-- New enhancements
+- More tarots
+- More enhancements
 - Entropy and Oblivion Crossmod content
-- (maybe) Cryptid Crossmod content
+- Forcetrigger support

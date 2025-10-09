@@ -4,10 +4,15 @@ return {
             j_req_cat = {
                 name = "Cat Joker",
                 text = {
-                    "When drawing cards",
-                    "deploy a {C:attention}Card Cat{}",
-                    "into your hand",
-                    "evolves after 2 boss blinds {C:inactive}(#1#/2){}",
+                    {
+                        "When drawing cards",
+                        "deploy a {C:attention}Card Cat{}",
+                        "into your hand",
+                    },
+                    {
+                        "Evolves after 2 boss blinds",
+                        "{C:inactive}(#1#/2){}",
+                    }
                 },
             },
             j_req_machocat = {
@@ -35,9 +40,13 @@ return {
             j_req_poptart = {
                 name = "Pop-tart",
                 text = {
-                    "Mult. is set to {C:mult}#1#{} after scoring",
-                    "Gain {C:money}$#2#{} when a card is scored",
-                    "{C:inactive}(Self destructs in #3# hands){}",
+                    {
+                        "Mult is set to {C:mult}#1#{} after scoring",
+                        "Gain {C:money}$#2#{} when a card is scored",
+                    },
+                    {
+                        "{C:inactive}(Self-destructs in #3# hands){}",
+                    }
                 },
             },
             j_req_forecast = {
@@ -61,31 +70,90 @@ return {
                     "card's {C:attention}edition{}",
                 },
             },
+            j_req_archonshardCrimson = {
+                name = "Crimson Archon Shard",
+                text = {
+                    {
+                        "Played cards with",
+                        "{C:hearts}#2#{} suit give",
+                        "{X:mult,C:white}X#1#{} Mult when scored"
+                    },
+                    {
+                        "Self-destructs after the hand is played"
+                    },
+                },
+            },
+            j_req_archonshardGreen = {
+                name = "Green Archon Shard",
+                text = {
+                    {
+                        "Played cards with",
+                        "{C:clubs}#2#{} suit give",
+                        "{X:mult,C:white}X#1#{} Mult when scored"
+                    },
+                    {
+                        "Self-destructs after the hand is played"
+                    },
+                },
+            },
+            j_req_archonshardSilver = {
+                name = "Silver Archon Shard",
+                text = {
+                    {
+                        "Played cards with",
+                        "{C:spades}#2#{} suit give",
+                        "{X:mult,C:white}X#1#{} Mult when scored"
+                    },
+                    {
+                        "Self-destructs after the hand is played"
+                    },
+                },
+            },
+            j_req_archonshardGold = {
+                name = "Golden Archon Shard",
+                text = {
+                    {
+                        "Played cards with",
+                        "{C:diamonds}#2#{} suit give",
+                        "{X:mult,C:white}X#1#{} Mult when scored"
+                    },
+                    {
+                        "Self-destructs after the hand is played"
+                    },
+                },
+            },
+
 
         },
         Enhanced = {
             m_req_cat = {
                 name = "Card Cat",
                 text = {
-                    "{C:mult}+#1#{} Mult.",
-                    "suitless, counts as a {C:attention}Jack{}",
-                    "{C:mult}self-destructs after end of round{}",
+                    {
+                        "{C:mult}+#1#{} Mult",
+                    },
+                    {
+                        "Suitless, counts as a {C:attention}Jack{}"
+                    },
+                    {
+                        "{C:mult}Self-destructs after end of round{}"
+                    },
                 },
             },
             m_req_shingle = {
                 name = "Shingle Card",
                 text = {
                     {
-                        "{}{C:mult}+#2#{} Mult.",
+                        "{}{C:mult}+#2#{} Mult",
                     },
                     {
-                        
+
                         "{C:attention}Durability{} goes down",
                         "every time its played",
                         "{C:inactive}({}{C:attention}#1#{}{C:inactive} uses remaining){}",
                     },
                     {
-                        "Grants {C:mult}Mult.{} equal to {C:attention}1.2{} times",
+                        "Grants {C:mult}Mult{} equal to {C:attention}1.2{} times",
                         "the current {C:attention}durability{}",
                         "{C:inactive}(Currently {}{C:mult}+#2#{}{C:inactive}){}",
                     },
@@ -105,6 +173,16 @@ return {
                         "Increases durability of {C:attention}#1#{}",
                         "selected {C:attention}#2#{}",
                         "by {C:attention}#3#{}",
+                    },
+                },
+            },
+            c_req_archon = {
+                name = "Archon",
+                text = {
+                    {
+                        "Creates a random",
+                        "{C:attention}Archon Shard{}",
+                        "{C:inactive}(Must have room)",
                     },
                 },
             }
