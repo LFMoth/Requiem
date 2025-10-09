@@ -221,6 +221,44 @@ SMODS.Joker {
         end
     end
 }
+-- AWESOME FUCKING SKELETON
+SMODS.Joker {
+    key = "awesomeFuckingSkeleton",
+    blueprint_compat = true,
+    rarity = 2,
+    cost = 5,
+    atlas = "jokers",
+    pos = { x = 3, y = 0 },
+    calculate = function(self, card, context)
+        if context.joker_main and G.GAME.current_round.hands_left == 0 then
+            SMODS.add_card({key = "c_death"})
+        end
+        if context.forcetrigger then
+            SMODS.add_card({key = "c_death"})
+        end
+    end
+}
+-- Somebody
+SMODS.Joker {
+    key = "somebody",
+    blueprint_compat = true,
+    rarity = 2,
+    cost = 7,
+    atlas = "jokers",
+    pos = { x = 4, y = 1 },
+    config = { extra = { chips = 3 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.chips } }
+    end,
+    calculate = function(self, card, context)
+        if context.post_trigger then
+            return {chips = card.ability.chips}
+        end
+        if context.forcetrigger then
+            return {chips = card.ability.chips}
+        end
+    end
+}
 -- Pop-tart
 SMODS.Joker {
     key = "poptart",
@@ -254,6 +292,11 @@ SMODS.Joker {
             return { func = function() mod_mult(card.ability.extra.mult) end }            
         end
         if context.individual and context.cardarea == G.play then
+            return {
+                dollars = card.ability.extra.dollars
+            }
+        end
+        if context.forcetrigger then
             return {
                 dollars = card.ability.extra.dollars
             }
@@ -307,6 +350,10 @@ SMODS.Joker {
             local newedition = Cryptid.poll_random_edition()
             card:set_edition(newedition, true, false)
         end
+        if context.forcetrigger then
+            local newedition = Cryptid.poll_random_edition()
+            card:set_edition(newedition, true, false)
+        end
     end
 }
 
@@ -351,6 +398,9 @@ SMODS.Joker {
                 SMODS.destroy_cards(card)
             end
         end
+        if context.forcetrigger then
+            SMODS.add_card { set = "Base", enhancement = "m_req_cat", area = G.hand }
+        end
     end
 }
 -- Macho Joker Cat
@@ -383,6 +433,10 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.drawing_cards then
+            SMODS.add_card { set = "Base", enhancement = "m_req_cat", area = G.hand }
+            SMODS.add_card { set = "Base", enhancement = "m_req_cat", area = G.hand }
+        end
+        if context.forcetrigger then
             SMODS.add_card { set = "Base", enhancement = "m_req_cat", area = G.hand }
             SMODS.add_card { set = "Base", enhancement = "m_req_cat", area = G.hand }
         end

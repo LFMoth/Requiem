@@ -74,6 +74,6 @@ SMODS.Consumable {
         delay(0.5)
     end,
     can_use = function(self, card)
-        return G.hand and #G.hand.highlighted > 0 and #G.hand.highlighted <= card.ability.max_highlighted
+        return G.hand and #G.hand.highlighted > 0 and #G.hand.highlighted <= card.ability.max_highlighted   
     end
 }

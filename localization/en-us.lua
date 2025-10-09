@@ -122,6 +122,25 @@ return {
                     },
                 },
             },
+            j_req_awesomeFuckingSkeleton = {
+                name = "AWESOME FUCKING SKELETON JOKER",
+                text = {
+                    {
+                        "Playing your last {C:attention}hand{}",
+                        "creates a {C:attention}Death{} tarot"
+                    },
+                },
+            },
+            j_req_somebody = {
+                name = "Somebody",
+                text = {
+                    {
+                        "+{C:chips}#1#{} chips",
+                        "every time a {C:chips}Joker{}",
+                        "triggers"
+                    },
+                },
+            },
 
 
         },
