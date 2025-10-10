@@ -7,7 +7,7 @@
     "prefix": "req",
     "author": ["LFMoth"],
     "main_file": "Requiem.lua",
-    "priority": 666,
+    "priority": 665,
     "badge_colour": "A12B2B",
     "dependencies": [
         "Steamodded (>=1.0.0~BETA-0827)",

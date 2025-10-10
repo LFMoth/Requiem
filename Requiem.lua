@@ -1,6 +1,6 @@
 -- load hooks file for funnies
 SMODS.load_file("lib/hooks.lua")()
--- enable quantum enhancements for enhancement shenanigans
+-- enable optional stuff for funnies
 SMODS.current_mod.optional_features = function()
     return {
         quantum_enhancements = true,
@@ -32,8 +32,11 @@ SMODS.current_mod.extra_tabs = function()
     }
 end
 
--- Entropy Crossmod
-if next(SMODS.find_mod("entr")) then -- Uses the mod's ID
+-- Load crossmod files
+if next(SMODS.find_mod("entr")) then
     SMODS.load_file("items/crossmod/entropy/enhancements.lua")()
     SMODS.load_file("items/crossmod/entropy/frauds.lua")()
+end
+if next(SMODS.find_mod("Cryptid")) then
+    SMODS.load_file("items/crossmod/cryptid/decks.lua")()
 end
