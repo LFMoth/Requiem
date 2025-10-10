@@ -146,8 +146,8 @@ return {
                 text = {
                     {
                         "On {C:mult}discard{},",
-                        "{C:important}#1# in 4 chance{}",
-                        "to {C:important}refund{} the discard"
+                        "{C:attention}#1# in 4{} chance",
+                        "to {C:attention}refund{} the discard"
                     },
                 },
             },
@@ -155,8 +155,8 @@ return {
                 name = "Investor",
                 text = {
                     {
-                        "When the {C:important}joker{},",
-                        "to the {C:important}right{} triggers,",
+                        "When the {C:attention}joker{},",
+                        "to the {C:attention}right{} triggers,",
                         "grant {C:money}$#1#{}"
                     },
                 },
