@@ -4,12 +4,12 @@ A balatro mod that adds some smart and silly additions
 (Requires [CryptLib](https://github.com/SpectralPack/Cryptlib))
 
 Currently adds (not counting crossmod content):
-- 13 Jokers
+- 15 Jokers
 - 2 Tarot Cards
 - 2 Enhancements
 
 Crossmod content:
-[Entropy](https://github.com/lord-ruby/Entropy) - Twisted Consumables
+[Entropy](https://github.com/lord-ruby/Entropy) - Twisted Consumables (Recommended to play with!)
 
 Compatibility:
 - Value manipulation support
@@ -18,5 +18,6 @@ Compatibility:
 Planned content:
 - More Jokers
 - More tarots
+- Spectral cards
 - More enhancements
-- Oblivion Crossmod content
+- More crossmod content
