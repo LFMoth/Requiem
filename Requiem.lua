@@ -5,7 +5,8 @@ SMODS.current_mod.optional_features = function()
     return {
         quantum_enhancements = true,
         post_trigger = true,
-        retrigger_joker = true
+        retrigger_joker = true,
+        cardareas = {discard = true}
     }
 end
 

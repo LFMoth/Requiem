@@ -261,6 +261,28 @@ SMODS.Joker {
         end
     end
 }
+SMODS.Joker {
+    key = "investor",
+    atlas = "jokers",
+    pos = { x = 5, y = 1 },
+    rarity = 2,
+    blueprint_compat = true,
+    immutable = false,
+    cost = 10,
+    config = { extra = { dollars = 1} },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.dollars} }
+    end,
+    calculate = function(self, card, context)
+        local other_joker = nil
+        for i = 1, #G.jokers.cards do
+            if G.jokers.cards[i] == card then other_joker = G.jokers.cards[i - 1] end
+        end
+        if context.post_trigger and context.cardarea == other_joker then
+            return {dollars = card.ability.dollars}
+        end
+    end
+}
 
 -- Rare Jokers
 
@@ -361,6 +383,27 @@ SMODS.Joker {
                         SMODS.smart_level_up_hand(card, context.scoring_name)
                     end
                 }
+            end
+        end
+    end
+}
+-- Primed sure footed
+SMODS.Joker {
+    key = "primedSureFooted",
+    atlas = "jokers",
+    pos = { x = 7, y = 1 },
+    rarity = 3,
+    blueprint_compat = true,
+    immutable = false,
+    cost = 10,
+    config = { extra = { chance = 1, discards = 1 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.chance} }
+    end,
+    calculate = function(self, card, context)
+        if context.before and context.cardarea == G.discard then
+            if SMODS.pseudorandom_probability(card, 'req_primedSureFooted', card.ability.extra.chance, 4) then
+                ease_discard(1)
             end
         end
     end

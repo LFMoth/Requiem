@@ -141,7 +141,26 @@ return {
                     },
                 },
             },
-
+            j_req_primedSureFooted = {
+                name = "Primed Sure Footed",
+                text = {
+                    {
+                        "On {C:mult}discard{},",
+                        "{C:important}#1# in 4 chance{}",
+                        "to {C:important}refund{} the discard"
+                    },
+                },
+            },
+            j_req_investor = {
+                name = "Investor",
+                text = {
+                    {
+                        "When the {C:important}joker{},",
+                        "to the {C:important}right{} triggers,",
+                        "grant {C:money}$#1#{}"
+                    },
+                },
+            },
 
         },
         Enhanced = {
