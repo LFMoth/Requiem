@@ -11,6 +11,9 @@ SMODS.Enhancement {
     pos = { x = 1, y = 0 },
     atlas = "enhancementsEntr",
     config = { bonus = 100, handu = 1 },
+    set_badges = function(self, card, badges)
+        SMODS.create_mod_badges({ mod = SMODS.find_mod("entr")[1] }, badges)
+    end,
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.bonus, card.ability.handu } }
     end,
