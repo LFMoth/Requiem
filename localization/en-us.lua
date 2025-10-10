@@ -156,7 +156,7 @@ return {
                 text = {
                     {
                         "When the {C:attention}joker{},",
-                        "to the {C:attention}right{} triggers,",
+                        "to the {C:attention}left{} triggers,",
                         "grant {C:money}$#1#{}"
                     },
                 },
