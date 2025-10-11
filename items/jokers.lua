@@ -18,13 +18,15 @@ SMODS.Joker {
         return { vars = { card.ability.extra.Xmult, localize(card.ability.extra.suit, 'suits_singular') } }
     end,
     calculate = function(self, card, context)
+        local markedfordeath = false
         if context.individual and context.cardarea == G.play and
             context.other_card:is_suit(card.ability.extra.suit) then
+                markedfordeath = true
             return {
                 Xmult = card.ability.extra.Xmult
             }
         end
-        if context.final_scoring_step and context.cardarea == G.jokers then
+        if context.final_scoring_step and context.cardarea == G.jokers and markedfordeath == true then
             SMODS.destroy_cards(card)
         end
     end
@@ -46,13 +48,15 @@ SMODS.Joker {
         return { vars = { card.ability.extra.Xmult, localize(card.ability.extra.suit, 'suits_singular') } }
     end,
     calculate = function(self, card, context)
+        local markedfordeath = false
         if context.individual and context.cardarea == G.play and
             context.other_card:is_suit(card.ability.extra.suit) then
+                markedfordeath = true
             return {
                 Xmult = card.ability.extra.Xmult
             }
         end
-        if context.final_scoring_step and context.cardarea == G.jokers then
+        if context.final_scoring_step and context.cardarea == G.jokers and markedfordeath == true then
             SMODS.destroy_cards(card)
         end
     end
@@ -69,18 +73,20 @@ SMODS.Joker {
     pools = {
         ["archon"] = true,
     },
-    config = { extra = { Xmult = 2, suit = 'Clubs' }, },
+    config = { extra = { Xmult = 2, suit = 'Spades' }, },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.Xmult, localize(card.ability.extra.suit, 'suits_singular') } }
     end,
     calculate = function(self, card, context)
+        local markedfordeath = false
         if context.individual and context.cardarea == G.play and
             context.other_card:is_suit(card.ability.extra.suit) then
+                markedfordeath = true
             return {
                 Xmult = card.ability.extra.Xmult
             }
         end
-        if context.final_scoring_step and context.cardarea == G.jokers then
+        if context.final_scoring_step and context.cardarea == G.jokers and markedfordeath == true then
             SMODS.destroy_cards(card)
         end
     end
@@ -98,13 +104,15 @@ SMODS.Joker {
         return { vars = { card.ability.extra.Xmult, localize(card.ability.extra.suit, 'suits_singular') } }
     end,
     calculate = function(self, card, context)
+        local markedfordeath = false
         if context.individual and context.cardarea == G.play and
             context.other_card:is_suit(card.ability.extra.suit) then
+                markedfordeath = true
             return {
                 Xmult = card.ability.extra.Xmult
             }
         end
-        if context.final_scoring_step and context.cardarea == G.jokers then
+        if context.final_scoring_step and context.cardarea == G.jokers and markedfordeath == true then
             SMODS.destroy_cards(card)
         end
     end
@@ -164,7 +172,6 @@ SMODS.Joker {
     atlas = "jokers",
     pos = { x = 3, y = 0 },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = G.P_CENTERS['c_death']
         info_queue[#info_queue + 1] = G.P_CENTERS['c_death']
     end,
     calculate = function(self, card, context)

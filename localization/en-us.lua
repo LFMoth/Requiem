@@ -79,7 +79,8 @@ return {
                         "{X:mult,C:white}X#1#{} Mult when scored"
                     },
                     {
-                        "Self-destructs after the hand is played"
+                        "Self-destructs after the hand is played,",
+                        "if it contains {C:hearts}#2#s{}"
                     },
                 },
             },
@@ -88,11 +89,12 @@ return {
                 text = {
                     {
                         "Played cards with",
-                        "{C:clubs}#2#{} suit give",
+                        "a non-{C:clubs}#2#{} suit give",
                         "{X:mult,C:white}X#1#{} Mult when scored"
                     },
                     {
-                        "Self-destructs after the hand is played"
+                        "Self-destructs after the hand is played,",
+                        "if it contains {C:clubs}#2#s{}"
                     },
                 },
             },
@@ -105,7 +107,8 @@ return {
                         "{X:mult,C:white}X#1#{} Mult when scored"
                     },
                     {
-                        "Self-destructs after the hand is played"
+                        "Self-destructs after the hand is played,",
+                        "if it contains {C:spades}#2#s{}"
                     },
                 },
             },
@@ -118,7 +121,8 @@ return {
                         "{X:mult,C:white}X#1#{} Mult when scored"
                     },
                     {
-                        "Self-destructs after the hand is played"
+                        "Self-destructs after the hand is played,",
+                        "if it contains {C:diamonds}#2#s{}"
                     },
                 },
             },

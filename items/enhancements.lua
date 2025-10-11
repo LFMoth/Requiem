@@ -54,7 +54,7 @@ SMODS.Enhancement {
     no_rank = false,
     overrides_base_rank = false,
     no_suit = false,
-    always_scores = true,
+    always_scores = false,
     shatters = true,
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.durability, card.ability.durability * 1.2 } }
