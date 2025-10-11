@@ -102,6 +102,8 @@ SMODS.Consumable {
         end
     end,
     can_use = function(self, card)
-        return G.hand and #G.hand.highlighted > 0 and #G.hand.highlighted <= card.ability.max_highlighted
+        return G.hand and #G.hand.highlighted > 0
+        and #G.hand.highlighted <= card.ability.max_highlighted
+        and SMODS.has_enhancement(#G.hand.highlighted, "m_req_shingle")
     end
 }

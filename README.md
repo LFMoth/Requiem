@@ -9,7 +9,9 @@ Currently adds (not counting crossmod content):
 - 2 Enhancements
 
 Crossmod content:
-[Entropy](https://github.com/lord-ruby/Entropy) - Twisted Consumables (Recommended to play with!)
+[Entropy](https://github.com/lord-ruby/Entropy) (Recommended to play with!):
+- 2 Fraud Cards
+- 1 Enhancement
 
 Compatibility:
 - Value manipulation support

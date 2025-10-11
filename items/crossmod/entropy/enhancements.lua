@@ -10,6 +10,7 @@ SMODS.Enhancement {
     key = 'exalted',
     pos = { x = 1, y = 0 },
     atlas = "enhancementsEntr",
+    in_pool = function() return false end,
     config = { bonus = 100, handu = 1 },
     set_badges = function(self, card, badges)
         SMODS.create_mod_badges({ mod = SMODS.find_mod("entr")[1] }, badges)

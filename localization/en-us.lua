@@ -161,6 +161,15 @@ return {
                     },
                 },
             },
+            j_req_brickedup = {
+                name = "Bricked-up Joker",
+                text = {
+                    {
+                        "Unplayed {C:attention}#2#s{}",
+                        "gain {C:attention}#1#{} durability"
+                    },
+                },
+            },
 
         },
         Enhanced = {

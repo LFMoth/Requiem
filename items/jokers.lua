@@ -261,6 +261,7 @@ SMODS.Joker {
         end
     end
 }
+-- Investor
 SMODS.Joker {
     key = "investor",
     atlas = "jokers",
@@ -279,9 +280,43 @@ SMODS.Joker {
             if G.jokers.cards[i] == card then other_joker = G.jokers.cards[i - 1] end
         end
         if context.post_trigger and context.cardarea == other_joker then
-            return {dollars = card.ability.dollars}
+            return {dollars = card.ability.extra.dollars}
         end
     end
+}
+-- Bricked-Up Joker
+SMODS.Joker {
+    key = "brickedup",
+    atlas = "jokers",
+    pos = { x = 6, y = 1 },
+    rarity = 2,
+    blueprint_compat = true,
+    immutable = false,
+    cost = 5,
+    enhancement_gate = 'm_req_shingle',
+    config = {
+        mod_conv = "m_req_shingle",
+        extra = {
+            durability_inc = 1
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
+        return { vars = { card.ability.extra.durability_inc, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
+    end,
+    calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.hand and not context.end_of_round and SMODS.has_enhancement(card.ability.mod_conv, other_card) then
+            if context.other_card.debuff then
+                return {
+                    message = localize('k_debuffed'),
+                    colour = G.C.RED
+                }
+            else
+                    other_card.ability.durability = other_card.ability.durablity + ability.extra.durability_inc
+
+            end
+        end
+    end,
 }
 
 -- Rare Jokers
