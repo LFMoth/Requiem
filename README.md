@@ -4,7 +4,7 @@ A balatro mod that adds some smart and silly additions
 (Requires [CryptLib](https://github.com/SpectralPack/Cryptlib))
 
 Currently adds (not counting crossmod content):
-- 15 Jokers
+- 19 Jokers
 - 2 Tarot Cards
 - 2 Enhancements
 
