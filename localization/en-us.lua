@@ -174,6 +174,46 @@ return {
                     },
                 },
             },
+            j_req_metajoker = {
+                name = "Metajoker",
+                text = {
+                    {
+                        "Grants {C:mult}+#1#{} mult",
+                        "every time a",
+                        "{C:attention}Joker{} triggers"
+                    },
+                },
+            },
+            j_req_mountaineer = {
+                name = "Mountaineer",
+                text = {
+                    {
+                        "In the {C:attention}first hand{} of",
+                        "the round, converts",
+                        "the {C:attention}rightmost{} played card",
+                        "into the {C:attention}leftmost{} played card"
+                    },
+                },
+            },
+            j_req_bait = {
+                name = "Bait",
+                text = {
+                    {
+                        "{C:hearts}Rare{} Jokers become",
+                        "easier to find"
+                    },
+                },
+            },
+            j_req_ascii = {
+                name = "ASCII Joker",
+                text = {
+                    {
+                        "Scored {C:attention}numbered cards{}",
+                        "have a {C:attention}#1# in 4{} chance",
+                        "to give {X:mult,C:white}X#2#{} mult"
+                    },
+                },
+            },
 
         },
         Enhanced = {

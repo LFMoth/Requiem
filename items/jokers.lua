@@ -117,6 +117,70 @@ SMODS.Joker {
         end
     end
 }
+-- ASCII Joker
+SMODS.Joker {
+    key = "ascii",
+    atlas = "jokers",
+    pos = { x = 0, y = 2 },
+    rarity = 1,
+    blueprint_compat = true,
+    immutable = false,
+    cost = 4,
+    config = { extra = { chance = 1, xmult = 1.5 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.chance, card.ability.extra.xmult} }
+    end,
+    calculate = function(self, card, context)
+         if context.individual and context.cardarea == G.play then -- Every time a card is played
+            if SMODS.pseudorandom_probability(card, 'req_ascii', card.ability.extra.chance, 4) then -- Roll for chance
+                return {xmult = card.ability.extra.xmult}
+            end
+        end
+        if context.forcetrigger then
+            return {xmult = card.ability.extra.xmult}
+        end
+    end
+}
+-- Bait
+SMODS.Joker {
+    key = "bait",
+    atlas = "jokers",
+    pos = { x = 8, y = 1 },
+    rarity = 1,
+    blueprint_compat = false,
+    immutable = true,
+    cost = 4,
+    add_to_deck = function(self, card, context)
+        G.GAME.rare_mod = G.GAME.rare_mod + 0.5 -- Rarity weight multiplier starts at 1
+    end,
+    remove_from_deck = function(self, card, context)
+        G.GAME.rare_mod = G.GAME.rare_mod - 0.5
+    end
+}
+-- Metajoker
+SMODS.Joker {
+    key = "metajoker",
+    atlas = "jokers",
+    pos = { x = 1, y = 2 },
+    rarity = 1,
+    blueprint_compat = true,
+    immutable = false,
+    cost = 8,
+    config = { extra = { mult = 1 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.mult} }
+    end,
+     calculate = function(self, card, context)
+        if context.post_trigger then
+            return {mult = card.ability.extra.mult}
+        end
+        if context.forcetrigger then
+            return {mult = card.ability.extra.mult}
+        end
+    end
+}
+
+
 -- Uncommon Jokers
 
 -- Heister
