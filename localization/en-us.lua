@@ -85,7 +85,7 @@ return {
                 },
             },
             j_req_archonshardGreen = {
-                name = "Green Archon Shard",
+                name = "Emerald Archon Shard",
                 text = {
                     {
                         "Played cards with",
@@ -99,7 +99,7 @@ return {
                 },
             },
             j_req_archonshardSilver = {
-                name = "Silver Archon Shard",
+                name = "Azure Archon Shard",
                 text = {
                     {
                         "Played cards with",
@@ -113,7 +113,7 @@ return {
                 },
             },
             j_req_archonshardGold = {
-                name = "Golden Archon Shard",
+                name = "Topaz Archon Shard",
                 text = {
                     {
                         "Played cards with",
