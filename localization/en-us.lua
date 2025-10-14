@@ -5,7 +5,7 @@ return {
                 name = "Cat Joker",
                 text = {
                     {
-                        "When drawing cards",
+                        "After playing a hand,",
                         "deploy a {C:attention}Card Cat{}",
                         "into your hand",
                     },
@@ -18,7 +18,7 @@ return {
             j_req_machocat = {
                 name = "Macho Cat Joker",
                 text = {
-                    "When drawing cards",
+                    "After playing a hand,",
                     "deploy two {C:attention}Card Cats{}",
                     "into your hand",
                 },

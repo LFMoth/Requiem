@@ -294,7 +294,7 @@ SMODS.Joker {
         return { vars = { card.ability.progress, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
     calculate = function(self, card, context)
-        if context.drawing_cards then
+        if context.after and context.cardarea == G.jokers then
             SMODS.add_card { set = "Base", enhancement = "m_req_cat", area = G.hand }
         end
         if context.end_of_round and context.cardarea == G.jokers and context.beat_boss then
@@ -327,7 +327,7 @@ SMODS.Joker {
         return { vars = { localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
     calculate = function(self, card, context)
-        if context.drawing_cards then
+        if context.after and context.cardarea == G.jokers then
             SMODS.add_card { set = "Base", enhancement = "m_req_cat", area = G.hand }
             SMODS.add_card { set = "Base", enhancement = "m_req_cat", area = G.hand }
         end
