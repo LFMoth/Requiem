@@ -203,6 +203,14 @@ return {
                     },
                 },
             },
+            m_req_exalted = {
+                name = "Stacked Cards",
+                text = {
+                    {
+                        "Retriggers {C:attention}#1#{} times",
+                    },
+                },
+            },
         },
         Tarot = {
             c_req_colossus = {
