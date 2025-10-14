@@ -203,7 +203,7 @@ return {
                     },
                 },
             },
-            m_req_exalted = {
+            m_req_stacked = {
                 name = "Stacked Cards",
                 text = {
                     {
