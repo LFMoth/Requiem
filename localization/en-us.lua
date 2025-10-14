@@ -70,62 +70,6 @@ return {
                     "card's {C:attention}edition{}",
                 },
             },
-            j_req_archonshardCrimson = {
-                name = "Crimson Archon Shard",
-                text = {
-                    {
-                        "Played cards with",
-                        "{C:hearts}#2#{} suit give",
-                        "{X:mult,C:white}X#1#{} Mult when scored"
-                    },
-                    {
-                        "Self-destructs after the hand is played,",
-                        "if it contains {C:hearts}#2#s{}"
-                    },
-                },
-            },
-            j_req_archonshardGreen = {
-                name = "Emerald Archon Shard",
-                text = {
-                    {
-                        "Played cards with",
-                        "a non-{C:clubs}#2#{} suit give",
-                        "{X:mult,C:white}X#1#{} Mult when scored"
-                    },
-                    {
-                        "Self-destructs after the hand is played,",
-                        "if it contains {C:clubs}#2#s{}"
-                    },
-                },
-            },
-            j_req_archonshardSilver = {
-                name = "Azure Archon Shard",
-                text = {
-                    {
-                        "Played cards with",
-                        "{C:spades}#2#{} suit give",
-                        "{X:mult,C:white}X#1#{} Mult when scored"
-                    },
-                    {
-                        "Self-destructs after the hand is played,",
-                        "if it contains {C:spades}#2#s{}"
-                    },
-                },
-            },
-            j_req_archonshardGold = {
-                name = "Topaz Archon Shard",
-                text = {
-                    {
-                        "Played cards with",
-                        "{C:diamonds}#2#{} suit give",
-                        "{X:mult,C:white}X#1#{} Mult when scored"
-                    },
-                    {
-                        "Self-destructs after the hand is played,",
-                        "if it contains {C:diamonds}#2#s{}"
-                    },
-                },
-            },
             j_req_awesomeFuckingSkeleton = {
                 name = "AWESOME FUCKING SKELETON JOKER",
                 text = {
@@ -280,9 +224,8 @@ return {
                 name = "The Archon",
                 text = {
                     {
-                        "Creates a random",
-                        "{C:attention}Archon Shard{}",
-                        "{C:inactive}(Must have room)",
+                        "{C:inactive}(Currently reworking){}",
+                        "{C:inactive}(Not implemented){}",
                     },
                 },
             }

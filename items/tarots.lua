@@ -84,31 +84,7 @@ SMODS.Consumable {
     set = 'Tarot',
     atlas = "tarots",
     pos = { x = 3, y = 0 },
-    use = function(self, card, area, copier)
-        G.E_MANAGER:add_event(Event({
-            trigger = 'after',
-            delay = 0.4,
-            func = function()
-                play_sound('timpani')
-                SMODS.add_card(
-                    {
-                        key = pseudorandom_element(
-                            {
-                                "j_req_archonshardCrimson",
-                                "j_req_archonshardGreen",
-                                "j_req_archonshardSilver",
-                                "j_req_archonshardGold"
-                            }
-                        )
-                    }
-                )
-                card:juice_up(0.3, 0.5)
-                return true
-            end
-        }))
-        delay(0.6)
-    end,
     can_use = function(self, card)
-        return G.jokers and #G.jokers.cards < G.jokers.config.card_limit
+        return false
     end
 }
