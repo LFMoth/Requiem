@@ -211,7 +211,7 @@ return {
                     {
                         "Enhances {C:attention}#1#{} selected",
                         "card into a",
-                        "{C:attention}#2#",
+                        "{C:attention}#2#{}",
                     },
                     {
                         "Increases durability of {C:attention}#1#{}",
@@ -224,8 +224,9 @@ return {
                 name = "The Archon",
                 text = {
                     {
-                        "{C:inactive}(Currently reworking){}",
-                        "{C:inactive}(Not implemented){}",
+                        "Enhances {C:attention}#1#{} selected",
+                        "card into a",
+                        "{C:attention}#2#{}",
                     },
                 },
             }

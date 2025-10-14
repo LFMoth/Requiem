@@ -1,6 +1,5 @@
 -- Enhancements
 -- Card Cat
-
 SMODS.Enhancement {
     key = 'cat',
     cry_credits = {
@@ -34,6 +33,7 @@ SMODS.Enhancement {
         end
     end
 }
+-- Shingle
 SMODS.Enhancement {
     key = 'shingle',
     cry_credits = {
@@ -69,5 +69,24 @@ SMODS.Enhancement {
         if context.cardarea == G.play and context.main_scoring then
             return { mult = card.ability.durability * 1.2 }
         end
+    end
+}
+-- Stacked cards
+SMODS.Enhancement {
+    key = 'stacked',
+    atlas = "enhancements",
+    pos = { x = 3, y = 0 },
+    config = { count = 5 },
+    replace_base_card = false,
+    no_rank = false,
+    overrides_base_rank = false,
+    no_suit = false,
+    always_scores = false,
+    shatters = true,
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.count } }
+    end,
+    calculate = function(self, card, context)
+        if context.repetition and context.cardarea == G.play then return {repetitions = card.ability.count} end
     end
 }
