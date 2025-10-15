@@ -79,15 +79,16 @@ SMODS.Consumable {
     end
 
 }
+-- Archon
 SMODS.Consumable {
     key = 'archon',
     set = 'Tarot',
     atlas = "tarots",
     pos = { x = 3, y = 0 },
-    config = { max_highlighted = 1, mod_conv = 'm_req_stacked'},
+    config = { max_highlighted = 2, mod_conv = 'm_req_stacked' },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
-        return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv }, card.ability.durability_inc } }
+        return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
     use = function(self, card, area, copier)
         G.E_MANAGER:add_event(Event({
@@ -119,6 +120,7 @@ SMODS.Consumable {
                 delay = 0.1,
                 func = function()
                     G.hand.highlighted[i]:set_ability(card.ability.mod_conv)
+                    return true
                 end
             }))
         end
