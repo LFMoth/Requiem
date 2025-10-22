@@ -63,6 +63,21 @@ SMODS.Joker {
         end
     end
 }
+-- Captain Jimbo
+SMODS.Joker {
+    key = "captain",
+    atlas = "jokers",
+    pos = { x = 1, y = 1 },
+    rarity = 1,
+    blueprint_compat = false,
+    immutable = false,
+    cost = 3,
+    calculate = function(self, card, context)
+        if context.before and next(context.poker_hands['Three of a Kind']) then
+            SMODS.add_card({set = "Joker", rarity = "Common"})
+        end
+    end
+}
 -- Uncommon Jokers
 
 -- Heister
