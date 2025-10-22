@@ -274,6 +274,23 @@ SMODS.Joker {
     end,
 }
 
+-- I SKIN COMMON JOKERS !!!!
+SMODS.Joker {
+    key = "skin",
+    atlas = "jokers",
+    pos = { x = 8, y = 1 },
+    rarity = 1,
+    blueprint_compat = false,
+    immutable = true,
+    cost = 4,
+    add_to_deck = function(self, card, context)
+        G.GAME.common_mod = G.GAME.common_mod - 1 -- Rarity weight multiplier starts at 1
+    end,
+    remove_from_deck = function(self, card, context)
+        G.GAME.common_mod = G.GAME.common_mod + 1
+    end
+}
+
 -- Rare Jokers
 
 -- Joker Cat

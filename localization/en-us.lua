@@ -94,7 +94,7 @@ return {
                 text = {
                     {
                         "On {C:mult}discard{},",
-                        "{C:attention}#1# in 4{} chance",
+                        "{C:green}#1# in 4{} chance",
                         "to {C:attention}refund{} the discard"
                     },
                 },
@@ -153,8 +153,36 @@ return {
                 text = {
                     {
                         "Scored {C:attention}numbered cards{}",
-                        "have a {C:attention}#1# in 4{} chance",
+                        "have a {C:green}#1# in 4{} chance",
                         "to give {X:mult,C:white}X#2#{} mult"
+                    },
+                },
+            },
+            j_req_skin = {
+                name = "I SKIN COMMON JOKERS!!!",
+                text = {
+                    {
+                        "{C:attention}Common{} Jokers",
+                        "no longer appear",
+                    },
+                },
+            },
+            j_req_captain = {
+                name = "Captain Jimbo",
+                text = {
+                    {
+                        "Playing a {C:attention}Three of a Kind{}",
+                        "creates a random {C:blue}Common{} Joker",
+                    },
+                },
+            },
+            j_req_evolved = {
+                name = "Evolved Joker",
+                text = {
+                    {
+                        "Whenever a card is {C:attention}created{},",
+                        "gains {c:mult)+#1#{} mult",
+                        "{C:inactive}(Currently {C:red}+#2#{C:inactive} Mult)",
                     },
                 },
             },
