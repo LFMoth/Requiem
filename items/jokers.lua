@@ -279,7 +279,7 @@ SMODS.Joker {
     key = "skin",
     atlas = "jokers",
     pos = { x = 8, y = 1 },
-    rarity = 1,
+    rarity = 2,
     blueprint_compat = false,
     immutable = true,
     cost = 4,
