@@ -12,16 +12,16 @@ SMODS.Joker {
     cost = 4,
     config = { extra = { chance = 1, xmult = 1.5 } },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.chance, card.ability.extra.xmult} }
+        return { vars = { card.ability.extra.chance, card.ability.extra.xmult } }
     end,
     calculate = function(self, card, context)
-         if context.individual and context.cardarea == G.play and other_card:get_id() < 11 then -- Every time a card is played
+        if context.individual and context.cardarea == G.play and other_card:get_id() < 11 then      -- Every time a card is played
             if SMODS.pseudorandom_probability(card, 'req_ascii', card.ability.extra.chance, 4) then -- Roll for chance
-                return {xmult = card.ability.extra.xmult}
+                return { xmult = card.ability.extra.xmult }
             end
         end
         if context.forcetrigger then
-            return {xmult = card.ability.extra.xmult}
+            return { xmult = card.ability.extra.xmult }
         end
     end
 }
@@ -52,19 +52,17 @@ SMODS.Joker {
     cost = 8,
     config = { extra = { mult = 1 } },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.mult} }
+        return { vars = { card.ability.extra.mult } }
     end,
-     calculate = function(self, card, context)
+    calculate = function(self, card, context)
         if context.post_trigger then
-            return {mult = card.ability.extra.mult}
+            return { mult = card.ability.extra.mult }
         end
         if context.forcetrigger then
-            return {mult = card.ability.extra.mult}
+            return { mult = card.ability.extra.mult }
         end
     end
 }
-
-
 -- Uncommon Jokers
 
 -- Heister
@@ -124,10 +122,10 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.joker_main and G.GAME.current_round.hands_left == 0 then
-            SMODS.add_card({key = "c_death"})
+            SMODS.add_card({ key = "c_death" })
         end
         if context.forcetrigger then
-            SMODS.add_card({key = "c_death"})
+            SMODS.add_card({ key = "c_death" })
         end
     end
 }
@@ -145,10 +143,10 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.post_trigger then
-            return {chips = card.ability.chips}
+            return { chips = card.ability.chips }
         end
         if context.forcetrigger then
-            return {chips = card.ability.chips}
+            return { chips = card.ability.chips }
         end
     end
 }
@@ -171,7 +169,7 @@ SMODS.Joker {
             if card.ability.extra.uses < 1 then
                 SMODS.destroy_cards(card)
             end
-            return { func = function() mod_mult(card.ability.extra.mult) end }            
+            return { func = function() mod_mult(card.ability.extra.mult) end }
         end
         if context.individual and context.cardarea == G.play then
             return {
@@ -225,9 +223,9 @@ SMODS.Joker {
     blueprint_compat = true,
     immutable = false,
     cost = 10,
-    config = { extra = { dollars = 1} },
+    config = { extra = { dollars = 1 } },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.dollars} }
+        return { vars = { card.ability.extra.dollars } }
     end,
     calculate = function(self, card, context)
         local other_joker = nil
@@ -235,7 +233,7 @@ SMODS.Joker {
             if G.jokers.cards[i] == card then other_joker = G.jokers.cards[i - 1] end
         end
         if context.post_trigger and context.cardarea == other_joker then
-            return {dollars = card.ability.extra.dollars}
+            return { dollars = card.ability.extra.dollars }
         end
     end
 }
@@ -267,8 +265,7 @@ SMODS.Joker {
                     colour = G.C.RED
                 }
             else
-                    other_card.ability.durability = other_card.ability.durablity + ability.extra.durability_inc
-
+                other_card.ability.durability = other_card.ability.durablity + ability.extra.durability_inc
             end
         end
     end,
@@ -278,7 +275,7 @@ SMODS.Joker {
 SMODS.Joker {
     key = "skin",
     atlas = "jokers",
-    pos = { x = 8, y = 1 },
+    pos = { x = 0, y = 1 },
     rarity = 2,
     blueprint_compat = false,
     immutable = true,
@@ -317,7 +314,7 @@ SMODS.Joker {
         if context.end_of_round and context.cardarea == G.jokers and context.beat_boss then
             card.ability.progress = card.ability.progress + 1
             if card.ability.progress >= 2 then
-                SMODS.add_card({key = 'j_req_machocat'})
+                SMODS.add_card({ key = 'j_req_machocat' })
                 SMODS.destroy_cards(card)
             end
         end
@@ -405,7 +402,7 @@ SMODS.Joker {
     cost = 10,
     config = { extra = { chance = 1, discards = 1 } },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.chance} }
+        return { vars = { card.ability.extra.chance } }
     end,
     calculate = function(self, card, context)
         if context.before and context.cardarea == G.discard then
