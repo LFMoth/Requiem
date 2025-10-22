@@ -19,6 +19,7 @@ SMODS.load_file("items/atlases.lua")()
 SMODS.load_file("items/jokers.lua")()
 SMODS.load_file("items/enhancements.lua")()
 SMODS.load_file("items/tarots.lua")()
+SMODS.load_file("items/decks.lua")()
 
 -- credits stolen from valkarri
 SMODS.load_file("lib/credits_ui.lua")()
