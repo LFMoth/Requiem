@@ -420,7 +420,7 @@ SMODS.Joker {
         return { vars = { card.ability.extra.chance } }
     end,
     calculate = function(self, card, context)
-        if context.before and context.cardarea == G.discard then
+        if context.pre_discard and context.cardarea == G.discard then
             if SMODS.pseudorandom_probability(card, 'req_primedSureFooted', card.ability.extra.chance, 4) then
                 ease_discard(1)
             end
