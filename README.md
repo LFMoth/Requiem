@@ -13,6 +13,7 @@ Crossmod content:
 [Entropy](https://github.com/lord-ruby/Entropy) (Recommended to play with!):
 - 2 Fraud Cards
 - 1 Enhancement
+- 1 Deck
 
 Compatibility:
 - Value manipulation support

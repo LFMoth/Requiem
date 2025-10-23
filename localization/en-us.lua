@@ -310,6 +310,12 @@ return {
                     "{C:attention,T:m_stone}Holographic Red-Sealed Stone Card",
                     "{C:attention}#1# hand size"
                 },
+            },
+            b_req_inbetween = {
+                name = "Inbetween Deck",
+                text = {
+                    "Start with a {C:dark_edition}Aleph, Negative{C:attention}Flipside",
+                },
             }
         }
     }

@@ -38,6 +38,7 @@ end
 if next(SMODS.find_mod("entr")) then
     SMODS.load_file("items/crossmod/entropy/enhancements.lua")()
     SMODS.load_file("items/crossmod/entropy/frauds.lua")()
+    SMODS.load_file("items/crossmod/entropy/decks.lua")()
 end
 if next(SMODS.find_mod("Cryptid")) then
     SMODS.load_file("items/crossmod/cryptid/decks.lua")()
