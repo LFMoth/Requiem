@@ -297,10 +297,18 @@ return {
             b_req_handful = {
                 name = "Handful Deck",
                 text = {
-                    "Start with {C:blue}50 hands",
+                    "Start with {C:blue}#1# hands",
                     "{C:blue}Hands {C:red}never {}reset",
                     "{C:red}Discards {}are not consumed",
                     "{s:0.6,C:inactive}(No hand bonus)"
+                },
+            },
+            b_req_lonely = {
+                name = "Lonely Deck",
+                text = {
+                    "Start with a single",
+                    "{C:attention,T:m_stone}Holographic Red-Sealed Stone Card",
+                    "{C:attention}#1# hand size"
                 },
             }
         }
