@@ -293,6 +293,15 @@ return {
                     "{X:red,C:white}X#2#{C:red} Blind Scaling",
                     "{s:0.7}Start with {s:0.7,C:attention,T:tag_buffoon}2 Buffoon Tags"
                 },
+            },
+            b_req_handful = {
+                name = "Handful Deck",
+                text = {
+                    "Start with {C:blue}50 hands",
+                    "{C:blue}Hands {C:red}never {}reset",
+                    "{C:red}Discards {}are not consumed",
+                    "{s:0.6,C:inactive}(No hand bonus)"
+                },
             }
         }
     }

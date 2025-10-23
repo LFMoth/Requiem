@@ -7,7 +7,7 @@ Currently adds (not counting crossmod content):
 - 17 Jokers
 - 2 Tarot Cards
 - 3 Enhancements
-- 1 Deck
+- 2 Decks
 
 Crossmod content:
 [Entropy](https://github.com/lord-ruby/Entropy) (Recommended to play with!):
@@ -20,7 +20,6 @@ Compatibility:
 
 Planned content includes:
 - More Jokers
-- More tarots
+- More decks
 - Spectral cards
-- More enhancements
 - More crossmod content
