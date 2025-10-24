@@ -2,7 +2,7 @@
 SMODS.Voucher {
     key = 'membership',
     atlas = "vouchers",
-    pos = { x = 0, y = 1 },
+    pos = { x = 1, y = 0 },
     config = { extra = { active = false } },
     calculate = function(self, card, context)
         if context.type == 'shop_final_pass' and G.shop and not G.GAME.shop_free then -- Check if entering the shop
@@ -34,7 +34,7 @@ SMODS.Voucher {
 SMODS.Voucher {
     key = 'prism',
     atlas = "vouchers",
-    pos = { x = 0, y = 5 },
+    pos = { x = 5, y = 0 },
     redeem = function(self, card)
         G.E_MANAGER:add_event(Event({
             func = function()
