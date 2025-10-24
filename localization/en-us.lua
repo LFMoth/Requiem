@@ -317,6 +317,26 @@ return {
                     "Start with a {C:dark_edition}Aleph, Negative{C:attention}Flipside",
                 },
             }
+        },
+        Voucher = {
+            v_req_membership = {
+                name = "Membership",
+                text = {
+                    "{C:attention}First{} bought item in the {C:attention}shop{} is {C:attention}free{}",
+                },
+            },
+            v_req_glop = {
+                name = "Glop",
+                text = {
+                    "{X:mult,C:white}X2 {C:mult}mult{} after scoring",
+                },
+            },
+            v_req_prism = {
+                name = "Prism",
+                text = {
+                    "Non-{C:blue}Common {C:attention}Jokers{} are {C:attention}easier{} to find",
+                },
+            }
         }
     }
 }
