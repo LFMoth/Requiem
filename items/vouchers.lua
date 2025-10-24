@@ -5,7 +5,7 @@ SMODS.Voucher {
     pos = { x = 1, y = 0 },
     config = { extra = { active = false } },
     calculate = function(self, card, context)
-        if context.type == 'shop_final_pass' and G.shop and not G.GAME.shop_free then -- Check if entering the shop
+        if context.starting_shop and not G.GAME.shop_free then -- Check if entering the shop
             card.ability.extra.active = true 
         end
         if context.buying_card and card.ability.extra.active then
