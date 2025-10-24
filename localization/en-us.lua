@@ -334,7 +334,7 @@ return {
             v_req_prism = {
                 name = "Prism",
                 text = {
-                    "Non-{C:blue}Common {C:attention}Jokers{} are {C:attention}easier{} to find",
+                    "{C:blue}Common {C:attention}Jokers{} are {C:attention}rarer{}",
                 },
             }
         }

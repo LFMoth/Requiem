@@ -38,8 +38,7 @@ SMODS.Voucher {
     redeem = function(self, card)
         G.E_MANAGER:add_event(Event({
             func = function()
-                G.GAME.uncommon_mod = G.GAME.uncommon_mod + 0.4
-                G.GAME.rare_mod = G.GAME.rare_mod + 0.2
+                G.GAME.common_mod = G.GAME.common_mod - 0.3
                 return true
             end
         }))
