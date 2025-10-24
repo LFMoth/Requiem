@@ -328,7 +328,7 @@ return {
             v_req_glop = {
                 name = "Glop",
                 text = {
-                    "{X:mult,C:white}X2{C:mult} Mult{} after scoring",
+                    "{X:mult,C:white}X#1#{C:mult} Mult{} after scoring",
                 },
             },
             v_req_prism = {
