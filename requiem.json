@@ -1,7 +1,7 @@
 {
     "name": "Requiem",
     "id": "Requiem",
-    "version": "0.1",
+    "version": "0.1.0-alpha",
     "website_url": "https://github.com/LFMoth/Requiem",
     "description": "A Balatro Mod with smart and silly additions. Currently adds new jokers.",
     "prefix": "req",
