@@ -15,7 +15,7 @@ SMODS.Joker {
         return { vars = { card.ability.extra.chance, card.ability.extra.xmult } }
     end,
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and other_card:get_id() < 11 then      -- Every time a card is played
+        if context.individual and context.cardarea == G.play and context.other_card:get_id() < 11 then      -- Every time a card is played
             if SMODS.pseudorandom_probability(card, 'req_ascii', card.ability.extra.chance, 4) then -- Roll for chance
                 return { xmult = card.ability.extra.xmult }
             end
