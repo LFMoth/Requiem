@@ -337,6 +337,31 @@ return {
                     "{C:blue}Common {C:attention}Jokers{} are {C:attention}rarer{}",
                 },
             }
+        },
+        Spectral = {
+            c_req_guardian = {
+                name = "Guardian",
+                text = {
+                    "Apply protected to a joker",
+                    "or playing card",
+                },
+            },
+            c_req_evolution = {
+                name = "Evolution",
+                text = {
+                    "Redeem a random deck",
+                },
+            },
+        },
+        Other = {
+            p_req_voucher_normal = {
+                name = "Voucher Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:attention} Vouchers{} to",
+                    "be redeemed immediately",
+                },
+            },
         }
     }
 }
