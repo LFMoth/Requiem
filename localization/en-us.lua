@@ -334,13 +334,21 @@ return {
             v_req_prism = {
                 name = "Prism",
                 text = {
-                    "{C:blue}Common {C:attention}Jokers{} are {C:attention}rarer{}",
+                    "{C:blue}Common {C:attention}Jokers{} appear",
+                    "less often"
                 },
             },
             v_req_sfark = {
                 name = "Sfark",
                 text = {
                     "{X:chips,C:white}X#1#{C:chips} chips{} after scoring",
+                },
+            },
+            v_req_vip = {
+                name = "V.I.P. Membership",
+                text = {
+                    "After beating a {}Boss Blind{},",
+                    "gain a {T:tag_coupon,C:attention} Coupon Tag"
                 },
             },
         },

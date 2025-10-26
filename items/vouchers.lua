@@ -14,6 +14,18 @@ SMODS.Voucher {
         end
     end,
 }
+-- VIP
+SMODS.Voucher {
+    key = 'vip',
+    atlas = "vouchers",
+    pos = { x = 2, y = 0 },
+    requires = { 'v_req_membership' },
+    calculate = function(self, card, context)
+        if context.beat_boss then -- Check if entering the shop
+            add_tag(Tag('tag_coupon'))
+        end
+    end,
+}
 -- GLOP!!!
 SMODS.Voucher {
     key = 'glop',
@@ -33,7 +45,7 @@ SMODS.Voucher {
 SMODS.Voucher {
     key = 'sfark',
     atlas = "vouchers",
-    pos = { x = 3, y = 0 },
+    pos = { x = 4, y = 0 },
     requires = { 'v_req_glop' },
     config = { extra = { xchips = 2 } },
     loc_vars = function(self, info_queue, card)
