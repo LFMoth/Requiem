@@ -6,12 +6,18 @@ SMODS.Joker {
     key = "ascii",
     atlas = "jokers",
     pos = { x = 0, y = 2 },
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
     rarity = 1,
     blueprint_compat = true,
     immutable = false,
     cost = 4,
     config = { extra = { chance = 1, xmult = 1.5 } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
         return { vars = { card.ability.extra.chance, card.ability.extra.xmult } }
     end,
     calculate = function(self, card, context)
@@ -34,6 +40,14 @@ SMODS.Joker {
     blueprint_compat = false,
     immutable = true,
     cost = 4,
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
+    end,
     add_to_deck = function(self, card, context)
         G.GAME.rare_mod = G.GAME.rare_mod + 0.5 -- Rarity weight multiplier starts at 1
     end,
@@ -51,7 +65,13 @@ SMODS.Joker {
     immutable = false,
     cost = 8,
     config = { extra = { mult = 1 } },
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
         return { vars = { card.ability.extra.mult } }
     end,
     calculate = function(self, card, context)
@@ -72,6 +92,14 @@ SMODS.Joker {
     blueprint_compat = false,
     immutable = false,
     cost = 3,
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
+    end,
     calculate = function(self, card, context)
         if context.before and next(context.poker_hands['Three of a Kind']) then
             SMODS.add_card({ set = "Joker", rarity = "Common" })
@@ -90,7 +118,13 @@ SMODS.Joker {
     immutable = false,
     cost = 8,
     config = { extra = { dollars = 1 } },
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
         return { vars = { card.ability.extra.dollars } }
     end,
     calculate = function(self, card, context)
@@ -111,7 +145,13 @@ SMODS.Joker {
     immutable = false,
     cost = 6,
     config = { extra = { increase = 1 } },
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
         return { vars = { card.ability.extra.increase } }
     end,
     calculate = function(self, card, context)
@@ -132,8 +172,14 @@ SMODS.Joker {
     cost = 5,
     atlas = "jokers",
     pos = { x = 3, y = 0 },
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS['c_death']
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
     end,
     calculate = function(self, card, context)
         if context.joker_main and G.GAME.current_round.hands_left == 0 then
@@ -153,7 +199,13 @@ SMODS.Joker {
     atlas = "jokers",
     pos = { x = 4, y = 1 },
     config = { extra = { chips = 20 } },
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
         return { vars = { card.ability.extra.chips } }
     end,
     calculate = function(self, card, context)
@@ -175,7 +227,13 @@ SMODS.Joker {
     immutable = false,
     cost = 4,
     config = { extra = { mult = 0, dollars = 3, uses = 2 } },
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
         return { vars = { card.ability.extra.mult, card.ability.extra.dollars, card.ability.extra.uses } }
     end,
     calculate = function(self, card, context)
@@ -207,6 +265,14 @@ SMODS.Joker {
     blueprint_compat = false,
     immutable = true,
     cost = 4,
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
+    end,
     calculate = function(self, card, context)
         if context.end_of_round and context.cardarea == G.jokers and context.beat_boss then
             local newedition = Cryptid.poll_random_edition()
@@ -228,7 +294,13 @@ SMODS.Joker {
     immutable = false,
     cost = 10,
     config = { extra = { dollars = 1 } },
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
         return { vars = { card.ability.extra.dollars } }
     end,
     calculate = function(self, card, context)
@@ -257,7 +329,13 @@ SMODS.Joker {
             durability_inc = 1
         }
     },
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.extra.durability_inc, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
@@ -284,6 +362,14 @@ SMODS.Joker {
     blueprint_compat = false,
     immutable = true,
     cost = 4,
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
+    end,
     add_to_deck = function(self, card, context)
         G.GAME.common_mod = G.GAME.common_mod - 1 -- Rarity weight multiplier starts at 1
     end,
@@ -307,7 +393,13 @@ SMODS.Joker {
         progress = 0,
         mod_conv = "m_req_cat"
     },
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.progress, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
@@ -340,7 +432,13 @@ SMODS.Joker {
     config = {
         mod_conv = "m_req_cat"
     },
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
@@ -364,6 +462,14 @@ SMODS.Joker {
     blueprint_compat = false,
     immutable = true,
     cost = 10,
+    req_credits = {
+        art = "LFMoth",
+        code = "somethingcom",
+        idea = "LFMoth"
+    },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
+    end,
     calculate = function(self, card, context) -- Shoutouts to somethingcom for the code
         if context.before and not context.blueprint then
             if G.GAME.hands[context.scoring_name].played <= 1 then
@@ -405,7 +511,13 @@ SMODS.Joker {
     immutable = false,
     cost = 10,
     config = { extra = { chance = 1, discards = 1 } },
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
         return { vars = { card.ability.extra.chance } }
     end,
     calculate = function(self, card, context)
@@ -426,7 +538,13 @@ SMODS.Joker {
     immutable = false,
     cost = 8,
     config = { extra = { needed = 20, current = 0, increase = 1, discards = 0 } },
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
         return { vars = { card.ability.extra.needed, card.ability.extra.current, card.ability.extra.increase, card.ability.extra.discards } }
     end,
     calculate = function(self, card, context)

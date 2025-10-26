@@ -152,7 +152,7 @@ return {
                 name = "ASCII Joker",
                 text = {
                     {
-                        "Scored {C:attention}numbered cards{}",
+                        "{T:req_credits}Scored {C:attention}numbered cards{}",
                         "have a {C:green}#1# in 4{} chance",
                         "to give {X:mult,C:white}X#2#{} mult"
                     },
@@ -398,6 +398,14 @@ return {
                     "be redeemed immediately",
                 },
             },
+            req_credits = {
+                name = "Credits",
+                text = {
+                    "Art: {C:attention} #1#",
+                    "Code: {C:attention} #2#",
+                    "Idea: {C:attention} #3#",
+                },
+            }
         }
     }
 }
