@@ -4,11 +4,11 @@ A balatro mod that adds some smart and silly additions
 (Requires [CryptLib](https://github.com/SpectralPack/Cryptlib))
 
 This mod includes: (not counting crossmod content):
-- 17 Jokers
+- 18 Jokers
 - 2 Tarot Cards
 - 3 Enhancements
 - 3 Decks
-- 3 Vouchers
+- 5 Vouchers
 - 1 Booster Pack
 
 Crossmod content includes:

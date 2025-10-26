@@ -21,7 +21,7 @@ SMODS.Voucher {
     pos = { x = 2, y = 0 },
     requires = { 'v_req_membership' },
     calculate = function(self, card, context)
-        if context.beat_boss then -- Check if entering the shop
+        if context.beat_boss then
             add_tag(Tag('tag_coupon'))
         end
     end,

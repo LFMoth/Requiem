@@ -180,9 +180,30 @@ return {
                 name = "Evolved Joker",
                 text = {
                     {
-                        "Whenever a card is {C:attention}created{},",
-                        "gains {c:mult)+#1#{} mult",
-                        "{C:inactive}(Currently {C:red}+#2#{C:inactive} Mult)",
+                        "Whenever a {C:attention}playing card",
+                        "is added to deck   ",
+                        "gains {C:chips)+#1#{} chips",
+                        "{C:inactive}(Currently {C:chips}+#2#{C:inactive})",
+                    },
+                },
+            },
+            j_req_weirdo = {
+                name = "Weirdo",
+                text = {
+                    {
+                        "Whenever a {C:mult)Joker is obtained",
+                        "gains {C:mult)+#1#{} mult",
+                        "{C:inactive}(Currently {C:red}+#2#{C:inactive})",
+                    },
+                },
+            },
+            j_req_constipated = {
+                name = "Constipated Joker",
+                text = {
+                    {
+                        "For every {C:attention}#1#{C:inactive} (#2#/#1#) {}cards {C:attention}sold{}",
+                        "gains {C:red}+#3# discards{}",
+                        "{C:inactive}(Currently {C:red}+#4#{C:inactive})",
                     },
                 },
             },

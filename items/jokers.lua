@@ -15,8 +15,8 @@ SMODS.Joker {
         return { vars = { card.ability.extra.chance, card.ability.extra.xmult } }
     end,
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and context.other_card:get_id() < 11 then      -- Every time a card is played
-            if SMODS.pseudorandom_probability(card, 'req_ascii', card.ability.extra.chance, 4) then -- Roll for chance
+        if context.individual and context.cardarea == G.play and context.other_card:get_id() < 11 then -- Every time a card is played
+            if SMODS.pseudorandom_probability(card, 'req_ascii', card.ability.extra.chance, 4) then    -- Roll for chance
                 return { xmult = card.ability.extra.xmult }
             end
         end
@@ -74,7 +74,7 @@ SMODS.Joker {
     cost = 3,
     calculate = function(self, card, context)
         if context.before and next(context.poker_hands['Three of a Kind']) then
-            SMODS.add_card({set = "Joker", rarity = "Common"})
+            SMODS.add_card({ set = "Joker", rarity = "Common" })
         end
     end
 }
@@ -197,17 +197,6 @@ SMODS.Joker {
             }
         end
     end
-}
--- Forecast (WIP)
-SMODS.Joker {
-    key = "forecast",
-    atlas = "jokers",
-    pos = { x = 9, y = 0 },
-    rarity = 2,
-    blueprint_compat = false,
-    immutable = true,
-    cost = 9,
-    in_pool = function() return false end,
 }
 -- Extreme Joker
 SMODS.Joker {
@@ -425,5 +414,50 @@ SMODS.Joker {
                 ease_discard(1)
             end
         end
+    end
+}
+-- Constipated Joker
+SMODS.Joker {
+    key = "constipated",
+    atlas = "jokers",
+    pos = { x = 2, y = 2 },
+    rarity = 3,
+    blueprint_compat = false,
+    immutable = false,
+    cost = 8,
+    config = { extra = { needed = 20, current = 0, increase = 1, discards = 0 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.needed, card.ability.extra.current, card.ability.extra.increase, card.ability.extra.discards } }
+    end,
+    calculate = function(self, card, context)
+        if context.selling_card then
+            if card.ability.extra.current < card.ability.extra.needed then
+                card.ability.extra.current = card.ability.extra.current + 1
+            else
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        card.ability.extra.current = 0
+                        card.ability.extra.discards = card.ability.extra.discards + card.ability.extra.increase
+                        return true
+                    end
+                }))
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        G.GAME.round_resets.discards = G.GAME.round_resets.discards + card.ability.extra.increase
+                        ease_discard(card.ability.extra.increase)
+                        return true
+                    end
+                }))
+                return {
+                    message = localize('k_upgrade_ex'),
+                    colour = G.C.MULT,
+                    message_card = card
+                }
+            end
+        end
+    end,
+    remove_from_deck = function(self, card, context)
+        G.GAME.round_resets.discards = G.GAME.round_resets.discards - card.ability.extra.discards
+        ease_discard(-card.ability.extra.discards)
     end
 }
