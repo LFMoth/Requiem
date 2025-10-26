@@ -336,20 +336,27 @@ return {
                 text = {
                     "{C:blue}Common {C:attention}Jokers{} are {C:attention}rarer{}",
                 },
-            }
+            },
+            v_req_sfark = {
+                name = "Sfark",
+                text = {
+                    "{X:chips,C:white}X#1#{C:chips} chips{} after scoring",
+                },
+            },
         },
         Spectral = {
             c_req_guardian = {
                 name = "Guardian",
                 text = {
-                    "Apply protected to a joker",
+                    "Apply {C:edition}Protected{} to a joker",
                     "or playing card",
                 },
             },
             c_req_evolution = {
                 name = "Evolution",
                 text = {
-                    "Redeem a random deck",
+                    "{C:attention}Redeem{} a random {C:attention}Deck",
+                    "{C:red}Destroy{} a random {C:attention}Voucher"
                 },
             },
         },

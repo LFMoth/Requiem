@@ -29,7 +29,22 @@ SMODS.Voucher {
         end
     end,
 }
-
+-- SFARK!!!
+SMODS.Voucher {
+    key = 'sfark',
+    atlas = "vouchers",
+    pos = { x = 3, y = 0 },
+    requires = { 'v_req_glop' },
+    config = { extra = { xchips = 2 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.xchips } }
+    end,
+    calculate = function(self, card, context)
+        if context.final_scoring_step then
+            return {xchips = card.ability.extra.xchips }
+        end
+    end,
+}
 -- Prism
 SMODS.Voucher {
     key = 'prism',
