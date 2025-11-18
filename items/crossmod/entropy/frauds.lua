@@ -11,9 +11,6 @@ SMODS.Consumable {
     atlas = 'frauds',
     inversion = "c_req_archon",
     pos = { x = 3, y = 0 },
-    set_badges = function(self, card, badges)
-        SMODS.create_mod_badges({ mod = SMODS.find_mod("entr")[1] }, badges)
-    end,
     config = { max_highlighted = 1, mod_conv = 'm_req_exalted' },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
@@ -86,9 +83,6 @@ SMODS.Consumable {
     atlas = 'frauds',
     inversion = "c_req_colossus",
     pos = { x = 2, y = 0 },
-    set_badges = function(self, card, badges)
-        SMODS.create_mod_badges({ mod = SMODS.find_mod("entr")[1] }, badges)
-    end,
     config = { max_highlighted = 1 },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS['m_req_shingle']
