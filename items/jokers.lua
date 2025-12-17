@@ -378,6 +378,90 @@ SMODS.Joker {
     end
 }
 
+-- Mountaineer
+SMODS.Joker {
+    key = "mountaineer",
+    atlas = "jokers",
+    pos = { x = 9, y = 1 },
+    rarity = 2,
+    blueprint_compat = false,
+    immutable = false,
+    cost = 6,
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
+
+    calculate = function(self, card, context)
+        if context.first_hand_drawn and not context.blueprint then
+            local eval = function() return G.GAME.current_round.hands_played == 0 and not G.RESET_JIGGLES end
+            juice_card_until(card, eval, true)
+        end
+          if context.before and G.GAME.current_round.hands_played == 0 then
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.4,
+                func = function()
+                    play_sound('tarot1')
+                    card:juice_up(0.3, 0.5)
+                    return true
+                end
+            }))
+                local percent = 1.15 - (1 - 0.999) / (#G.play.cards - 0.998) * 0.3
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.15,
+                    func = function()
+                        G.play.cards[1]:flip()
+                        play_sound('card1', percent)
+                        G.play.cards[1]:juice_up(0.3, 0.3)
+
+                        G.play.cards[#G.play.cards]:flip()
+                        play_sound('card1', percent)
+                        G.play.cards[#G.play.cards]:juice_up(0.3, 0.3)
+                        return true
+                    end
+                }))
+            delay(0.2)
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.1,
+                    func = function()
+                        if G.play.cards[1] ~= G.play.cards[#G.play.cards] then
+                            copy_card(G.play.cards[1], G.play.cards[#G.play.cards])
+                        end
+                        return true
+                    end
+                }))
+                local percent = 0.85 + (1 - 0.999) / (#G.play.cards - 0.998) * 0.3
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.15,
+                    func = function()
+                        G.play.cards[1]:flip()
+                        play_sound('tarot2', percent, 0.6)
+                        G.play.cards[1]:juice_up(0.3, 0.3)
+
+                        G.play.cards[#G.play.cards]:flip()
+                        play_sound('tarot2', percent, 0.6)
+                        G.play.cards[#G.play.cards]:juice_up(0.3, 0.3)
+                        return true
+                    end
+                }))
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.2,
+                func = function()
+                    G.hand:unhighlight_all()
+                    return true
+                end
+            }))
+            delay(0.5)
+        end
+    end,
+}
+
 -- Rare Jokers
 
 -- Joker Cat
