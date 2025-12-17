@@ -181,9 +181,9 @@ return {
                 text = {
                     {
                         "Whenever a {C:attention}playing card",
-                        "is added to deck   ",
-                        "gains {C:chips)+#1#{} chips",
-                        "{C:inactive}(Currently {C:chips}+#2#{C:inactive})",
+                        "is added to deck",
+                        "gains {C:chips}+#2#{} chips",
+                        "{C:inactive}(Currently {C:chips}+#1#{C:inactive})",
                     },
                 },
             },

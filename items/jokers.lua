@@ -106,6 +106,59 @@ SMODS.Joker {
         end
     end
 }
+-- Evolved Joker
+SMODS.Joker {
+    key = "evolved",
+    atlas = "jokers",
+    pos = { x = 2, y = 1 },
+    rarity = 1,
+    blueprint_compat = true,
+    immutable = false,
+    cost = 3,
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
+    config = { extra = { chips = 0, increase = 10 } },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
+        return { vars = { card.ability.extra.chips, card.ability.extra.increase } }
+    end,
+    calculate = function(self, card, context)
+        if context.playing_card_added and not context.blueprint then           
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.4,
+                func = function()
+                    card:juice_up(0.3, 0.5)
+                    card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.increase
+                    return true
+                end
+            }))
+        end
+        if context.joker_main then
+            return {
+                chips = card.ability.extra.chips
+            }
+        end
+        if context.forcetrigger then
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.4,
+                func = function()
+                    card:juice_up(0.3, 0.5)
+                    card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.increase
+                    return true
+                end
+            }))
+            return{
+                chips = card.ability.extra.chips
+            }
+        end
+    end
+}
+
 -- Uncommon Jokers
 
 -- Heister
@@ -385,7 +438,7 @@ SMODS.Joker {
     pos = { x = 9, y = 1 },
     rarity = 2,
     blueprint_compat = false,
-    immutable = false,
+    immutable = true,
     cost = 6,
     req_credits = {
         art = "LFMoth",
@@ -400,7 +453,7 @@ SMODS.Joker {
             local eval = function() return G.GAME.current_round.hands_played == 0 and not G.RESET_JIGGLES end
             juice_card_until(card, eval, true)
         end
-          if context.before and G.GAME.current_round.hands_played == 0 then
+        if context.before and G.GAME.current_round.hands_played == 0 then
             G.E_MANAGER:add_event(Event({
                 trigger = 'after',
                 delay = 0.4,
@@ -410,47 +463,47 @@ SMODS.Joker {
                     return true
                 end
             }))
-                local percent = 1.15 - (1 - 0.999) / (#G.play.cards - 0.998) * 0.3
-                G.E_MANAGER:add_event(Event({
-                    trigger = 'after',
-                    delay = 0.15,
-                    func = function()
-                        G.play.cards[1]:flip()
-                        play_sound('card1', percent)
-                        G.play.cards[1]:juice_up(0.3, 0.3)
+            local percent = 1.15 - (1 - 0.999) / (#G.play.cards - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.15,
+                func = function()
+                    G.play.cards[1]:flip()
+                    play_sound('card1', percent)
+                    G.play.cards[1]:juice_up(0.3, 0.3)
 
-                        G.play.cards[#G.play.cards]:flip()
-                        play_sound('card1', percent)
-                        G.play.cards[#G.play.cards]:juice_up(0.3, 0.3)
-                        return true
-                    end
-                }))
+                    G.play.cards[#G.play.cards]:flip()
+                    play_sound('card1', percent)
+                    G.play.cards[#G.play.cards]:juice_up(0.3, 0.3)
+                    return true
+                end
+            }))
             delay(0.2)
-                G.E_MANAGER:add_event(Event({
-                    trigger = 'after',
-                    delay = 0.1,
-                    func = function()
-                        if G.play.cards[1] ~= G.play.cards[#G.play.cards] then
-                            copy_card(G.play.cards[1], G.play.cards[#G.play.cards])
-                        end
-                        return true
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.1,
+                func = function()
+                    if G.play.cards[1] ~= G.play.cards[#G.play.cards] then
+                        copy_card(G.play.cards[1], G.play.cards[#G.play.cards])
                     end
-                }))
-                local percent = 0.85 + (1 - 0.999) / (#G.play.cards - 0.998) * 0.3
-                G.E_MANAGER:add_event(Event({
-                    trigger = 'after',
-                    delay = 0.15,
-                    func = function()
-                        G.play.cards[1]:flip()
-                        play_sound('tarot2', percent, 0.6)
-                        G.play.cards[1]:juice_up(0.3, 0.3)
+                    return true
+                end
+            }))
+            local percent = 0.85 + (1 - 0.999) / (#G.play.cards - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.15,
+                func = function()
+                    G.play.cards[1]:flip()
+                    play_sound('tarot2', percent, 0.6)
+                    G.play.cards[1]:juice_up(0.3, 0.3)
 
-                        G.play.cards[#G.play.cards]:flip()
-                        play_sound('tarot2', percent, 0.6)
-                        G.play.cards[#G.play.cards]:juice_up(0.3, 0.3)
-                        return true
-                    end
-                }))
+                    G.play.cards[#G.play.cards]:flip()
+                    play_sound('tarot2', percent, 0.6)
+                    G.play.cards[#G.play.cards]:juice_up(0.3, 0.3)
+                    return true
+                end
+            }))
             G.E_MANAGER:add_event(Event({
                 trigger = 'after',
                 delay = 0.2,
