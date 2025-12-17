@@ -392,7 +392,9 @@ SMODS.Joker {
         code = "LFMoth",
         idea = "LFMoth"
     },
-
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
+    end,
     calculate = function(self, card, context)
         if context.first_hand_drawn and not context.blueprint then
             local eval = function() return G.GAME.current_round.hands_played == 0 and not G.RESET_JIGGLES end
