@@ -116,7 +116,7 @@ SMODS.Joker {
     blueprint_compat = true,
     immutable = false,
     cost = 4,
-    config = { extra = { mult = 0, dollars = 3, uses = 2 } },
+    config = { extra = { mult = 0, dollars = 2, uses = 1 } },
     req_credits = {
         art = "LFMoth",
         code = "LFMoth",
