@@ -283,7 +283,7 @@ SMODS.Joker {
     req_credits = {
         art = "LFMoth",
         code = "LFMoth",
-        idea = "LFMoth"
+        idea = "StarlightClovers"
     },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
