@@ -16,7 +16,13 @@ Requiem.path = "" .. SMODS.current_mod.path
 
 -- Load main files
 SMODS.load_file("items/atlases.lua")()
-SMODS.load_file("items/jokers.lua")()
+
+-- Joker Loading Zone, crossmod jokers also go here
+SMODS.load_file("items/jokers/common.lua")()
+SMODS.load_file("items/jokers/uncommon.lua")()
+SMODS.load_file("items/jokers/rare.lua")()
+
+-- Back to normal files
 SMODS.load_file("items/enhancements.lua")()
 SMODS.load_file("items/tarots.lua")()
 SMODS.load_file("items/decks.lua")()
@@ -36,7 +42,7 @@ SMODS.current_mod.extra_tabs = function()
     }
 end
 
--- Load crossmod files
+-- Load non-joker crossmod files
 if next(SMODS.find_mod("entr")) then
     SMODS.load_file("items/crossmod/entropy/enhancements.lua")()
     SMODS.load_file("items/crossmod/entropy/frauds.lua")()
