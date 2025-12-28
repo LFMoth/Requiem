@@ -41,3 +41,9 @@ SMODS.Atlas {
     px = 71,
     py = 95
 }
+SMODS.Atlas {
+    key = "enhancements-entr",
+    path = "crossmod/entropy/enhancements.png",
+    px = 71,
+    py = 95
+}

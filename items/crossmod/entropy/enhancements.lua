@@ -1,8 +1,8 @@
 -- Exalted
 SMODS.Enhancement {
     key = 'exalted',
-    pos = { x = 3, y = 0 },
-    atlas = "enhancements",
+    pos = { x = 1, y = 0 },
+    atlas = "enhancements-entr",
     in_pool = function() return false end,
     config = { bonus = 100, handu = 1 },
     loc_vars = function(self, info_queue, card)
