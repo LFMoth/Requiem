@@ -151,3 +151,29 @@ SMODS.Consumable {
         return G.hand and #G.hand.highlighted > 0 and #G.hand.highlighted <= card.ability.max_highlighted
     end
 }
+
+-- Door
+SMODS.Consumable {
+    key = 'door',
+    set = 'Tarot',
+    atlas = "tarots",
+    pos = { x = 1, y = 0 },
+    use = function(self, card, area, copier)
+
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.4,
+            func = function()
+                card:juice_up(0.3, 0.5)
+                add_tag(Tag(get_next_tag_key('seed')))
+                play_sound('generic1', 0.9 + math.random() * 0.1, 0.8)
+                play_sound('holo1', 1.2 + math.random() * 0.1, 0.4)
+                return true
+            end
+        }))
+        delay(0.6)
+    end,
+    can_use = function(self, card)
+        return true
+    end
+}

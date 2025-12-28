@@ -286,6 +286,15 @@ return {
                         "{C:attention}#2#{}",
                     },
                 },
+            },
+            c_req_door = {
+                name = "The Door",
+                text = {
+                    {
+                        "Creates a",
+                        "random {C:attention}Tag{}",
+                    },
+                },
             }
         },
         Fraud = {
