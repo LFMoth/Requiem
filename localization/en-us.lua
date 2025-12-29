@@ -94,7 +94,7 @@ return {
                 text = {
                     {
                         "On {C:mult}discard{},",
-                        "{C:green}#1# in 4{} chance",
+                        "{C:green}#1# in #2#{} chance",
                         "to {C:attention}refund{} the discard"
                     },
                 },
@@ -153,7 +153,7 @@ return {
                 text = {
                     {
                         "{T:req_credits}Scored {C:attention}numbered cards{}",
-                        "have a {C:green}#1# in 4{} chance",
+                        "have a {C:green}#1# in #3#{} chance",
                         "to give {X:mult,C:white}X#2#{} mult"
                     },
                 },
@@ -204,6 +204,18 @@ return {
                         "For every {C:attention}#1#{C:inactive} (#2#/#1#) {}cards {C:attention}sold{}",
                         "gains {C:red}+#3# discards{}",
                         "{C:inactive}(Currently {C:red}+#4#{C:inactive})",
+                    },
+                },
+            },
+            j_req_arc = {
+                name = "Arcing Orbit",
+                text = {
+                    {
+                        "When a blind is defeated",
+                        "{C:green}#1# in #2#{} chance to",
+                        "create a {C:attention,T:tag_rare}Rare Tag{}",
+                        "Otherwise, {C:green}#1# in #3#{} chance to",
+                        "create an {C:attention,,T:tag_uncommon}Uncommon Tag{}"
                     },
                 },
             },

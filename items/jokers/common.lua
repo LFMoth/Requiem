@@ -12,14 +12,14 @@ SMODS.Joker {
     blueprint_compat = true,
     immutable = false,
     cost = 4,
-    config = { extra = { chance = 1, xmult = 1.5 } },
+    config = { extra = { odds = 1, denominator = 4, xmult = 1.5 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
-        return { vars = { card.ability.extra.chance, card.ability.extra.xmult } }
+        return { vars = { card.ability.extra.odds, card.ability.extra.xmult, card.ability.extra.denominator } }
     end,
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play and context.other_card:get_id() < 11 then -- Every time a card is played
-            if SMODS.pseudorandom_probability(card, 'req_ascii', card.ability.extra.chance, 4) then    -- Roll for chance
+            if SMODS.pseudorandom_probability(card, 'req_ascii', card.ability.extra.odds, card.ability.extra.denominator) then    -- Roll for chance
                 return { xmult = card.ability.extra.xmult }
             end
         end

@@ -128,7 +128,7 @@ SMODS.Joker {
     blueprint_compat = true,
     immutable = false,
     cost = 10,
-    config = { extra = { chance = 1, discards = 1 } },
+    config = { extra = { odds = 1, discards = 1, denominator = 3 } },
     req_credits = {
         art = "LFMoth",
         code = "LFMoth",
@@ -136,11 +136,11 @@ SMODS.Joker {
     },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
-        return { vars = { card.ability.extra.chance } }
+        return { vars = { card.ability.extra.odds, card.ability.extra.denominator } }
     end,
     calculate = function(self, card, context)
-        if context.pre_discard and context.cardarea == G.discard then
-            if SMODS.pseudorandom_probability(card, 'req_primedSureFooted', card.ability.extra.chance, 4) then
+        if context.pre_discard and context.cardarea == G.jokers then
+            if SMODS.pseudorandom_probability(card, 'req_primedSureFooted', card.ability.extra.odds, card.ability.extra.denominator) then
                 ease_discard(1)
             end
         end

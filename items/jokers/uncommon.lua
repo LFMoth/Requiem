@@ -353,3 +353,88 @@ SMODS.Joker {
         end
     end,
 }
+
+-- Arcing Orbit
+SMODS.Joker {
+    key = "arc",
+    atlas = "jokers",
+    pos = { x = 5, y = 2 },
+    rarity = 2,
+    blueprint_compat = false,
+    immutable = false,
+    cost = 5,
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
+    config = { extra = { odds = 1, denominator1 = 4, denominator2 = 2} },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
+        return { vars = {card.ability.extra.odds, card.ability.extra.denominator, card.ability.extra.denominator2}}
+    end,
+    calculate = function(self, card, context)
+        if context.end_of_round and context.cardarea == G.jokers then
+            if SMODS.pseudorandom_probability(card, 'req_arc', card.ability.extra.odds, card.ability.extra.denominator) then
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.6,
+                    func = function()
+                        add_tag(Tag('tag_rare'))
+                        play_sound('generic1', 0.9 + math.random() * 0.1, 0.8)
+                        play_sound('holo1', 1.2 + math.random() * 0.1, 0.4)
+                        return true
+                    end
+                }))
+            elseif SMODS.pseudorandom_probability(card, 'req_arc', card.ability.extra.odds, card.ability.extra.denominator2) then
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.6,
+                    func = function()
+                        add_tag(Tag('tag_rare'))
+                        play_sound('generic1', 0.9 + math.random() * 0.1, 0.8)
+                        play_sound('holo1', 1.2 + math.random() * 0.1, 0.4)
+                        return true
+                    end
+                }))
+            else
+                return {
+                    message = localize('k_nope_ex'),
+                    colour = G.C.SECONDARY_SET.Tarot,
+                    message_card = card
+                }
+            end
+        end
+        if context.forcetrigger then
+            if SMODS.pseudorandom_probability(card, 'req_arc', card.ability.extra.odds, card.ability.extra.denominator) then
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.6,
+                    func = function()
+                        add_tag(Tag('tag_rare'))
+                        play_sound('generic1', 0.9 + math.random() * 0.1, 0.8)
+                        play_sound('holo1', 1.2 + math.random() * 0.1, 0.4)
+                        return true
+                    end
+                }))
+            elseif SMODS.pseudorandom_probability(card, 'req_arc', card.ability.extra.odds, card.ability.extra.denominator2) then
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.6,
+                    func = function()
+                        add_tag(Tag('tag_rare'))
+                        play_sound('generic1', 0.9 + math.random() * 0.1, 0.8)
+                        play_sound('holo1', 1.2 + math.random() * 0.1, 0.4)
+                        return true
+                    end
+                }))
+            else
+                return {
+                    message = localize('k_nope_ex'),
+                    colour = G.C.SECONDARY_SET.Tarot,
+                    message_card = card
+                }
+            end
+        end
+    end
+}
