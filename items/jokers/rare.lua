@@ -139,7 +139,7 @@ SMODS.Joker {
         return { vars = { card.ability.extra.odds, card.ability.extra.denominator } }
     end,
     calculate = function(self, card, context)
-        if context.pre_discard and context.cardarea == G.jokers then
+        if context.pre_discard and context.cardarea == G.discard then
             if SMODS.pseudorandom_probability(card, 'req_primedSureFooted', card.ability.extra.odds, card.ability.extra.denominator) then
                 ease_discard(1)
             end

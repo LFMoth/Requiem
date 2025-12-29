@@ -174,7 +174,7 @@ SMODS.Joker {
         end
     end
 }
--- Investor
+-- Investor (doesnt work currently)
 SMODS.Joker {
     key = "investor",
     atlas = "jokers",
@@ -198,8 +198,8 @@ SMODS.Joker {
         for i = 1, #G.jokers.cards do
             if G.jokers.cards[i] == card then other_joker = G.jokers.cards[i - 1] end
         end
-        if context.post_trigger and context.cardarea == other_joker then
-            return { dollars = card.ability.extra.dollars }
+        if context.post_trigger and context.other_joker == other_joker then
+            ease_dollars(card.ability.extra.dollars)
         end
     end
 }
