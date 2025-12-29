@@ -198,7 +198,7 @@ SMODS.Joker {
         for i = 1, #G.jokers.cards do
             if G.jokers.cards[i] == card then other_joker = G.jokers.cards[i - 1] end
         end
-        if context.post_trigger and context.other_joker == other_joker then
+        if context.post_trigger and context.other_card == other_joker then
             ease_dollars(card.ability.extra.dollars)
         end
     end
