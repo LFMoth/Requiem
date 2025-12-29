@@ -368,7 +368,7 @@ SMODS.Joker {
         code = "LFMoth",
         idea = "LFMoth"
     },
-    config = { extra = { odds = 1, denominator1 = 4, denominator2 = 2} },
+    config = { extra = { odds = 1, denominator = 4, denominator2 = 2} },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
         return { vars = {card.ability.extra.odds, card.ability.extra.denominator, card.ability.extra.denominator2}}
