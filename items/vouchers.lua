@@ -31,7 +31,7 @@ SMODS.Voucher {
     key = 'glop',
     atlas = "vouchers",
     pos = { x = 3, y = 0 },
-    config = { extra = { xmult = 2 } },
+    config = { extra = { xmult = 1.5 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xmult } }
     end,
@@ -47,7 +47,7 @@ SMODS.Voucher {
     atlas = "vouchers",
     pos = { x = 4, y = 0 },
     requires = { 'v_req_glop' },
-    config = { extra = { xchips = 2 } },
+    config = { extra = { xchips = 1.5 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xchips } }
     end,
