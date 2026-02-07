@@ -9,6 +9,7 @@ SMODS.Enhancement {
     no_rank = false,
     overrides_base_rank = true,
     no_suit = true,
+    in_pool = function() return false end,
     always_scores = true,
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.mult } }
