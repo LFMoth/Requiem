@@ -155,3 +155,30 @@ SMODS.Joker {
         end
     end
 }
+-- 100 jokers
+SMODS.Joker {
+    key = "100jokers",
+    atlas = "jokers",
+    blueprint_compat = false,
+    rarity = 1,
+    cost = 4,
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
+    pos = { x = 3, y = 2 },
+    config = { extra = { dollars = 1, joker_count = 0} },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
+        -- You can also do this if you want to make sure everything in the Joker slots is a Joker (blame other mods)
+            card.ability.extra.joker_count = 0
+            for i = 1, #G.jokers.cards do
+            if G.jokers.cards[i].ability.set == 'Joker' then card.ability.extra.joker_count = card.ability.extra.joker_count + 1 end
+            end
+        return { vars = {card.ability.extra.dollars, card.ability.extra.dollars * card.ability.extra.joker_count } }
+    end,
+    calc_dollar_bonus = function(self, card)
+        return card.ability.extra.dollars * card.ability.extra.joker_count
+    end
+}

@@ -219,7 +219,14 @@ return {
                     },
                 },
             },
-
+            j_req_100jokers = {
+                name = "100 Jokers",
+                text = {
+                    "Earn {C:money}$#1#{} at the end of round",
+                    "for each {C:attention}Joker{} you have",
+                    "{C:inactive}(Currently {C:money}$#2#{}{C:inactive})",
+                },
+            },
         },
         Enhanced = {
             m_req_cat = {
