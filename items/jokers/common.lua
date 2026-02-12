@@ -179,6 +179,10 @@ SMODS.Joker {
         return { vars = {card.ability.extra.dollars, card.ability.extra.dollars * card.ability.extra.joker_count } }
     end,
     calc_dollar_bonus = function(self, card)
+        card.ability.extra.joker_count = 0
+            for i = 1, #G.jokers.cards do
+            if G.jokers.cards[i].ability.set == 'Joker' then card.ability.extra.joker_count = card.ability.extra.joker_count + 1 end
+            end
         return card.ability.extra.dollars * card.ability.extra.joker_count
     end
 }
