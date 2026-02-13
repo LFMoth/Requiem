@@ -18,8 +18,8 @@ SMODS.Joker {
         return { vars = { card.ability.extra.odds, card.ability.extra.xmult, card.ability.extra.denominator } }
     end,
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and context.other_card:get_id() < 11 then -- Every time a card is played
-            if SMODS.pseudorandom_probability(card, 'req_ascii', card.ability.extra.odds, card.ability.extra.denominator) then    -- Roll for chance
+        if context.individual and context.cardarea == G.play and context.other_card:get_id() < 11 then                         -- Every time a card is played
+            if SMODS.pseudorandom_probability(card, 'req_ascii', card.ability.extra.odds, card.ability.extra.denominator) then -- Roll for chance
                 return { xmult = card.ability.extra.xmult }
             end
         end
@@ -123,7 +123,7 @@ SMODS.Joker {
         return { vars = { card.ability.extra.chips, card.ability.extra.increase } }
     end,
     calculate = function(self, card, context)
-        if context.playing_card_added and not context.blueprint then           
+        if context.playing_card_added and not context.blueprint then
             G.E_MANAGER:add_event(Event({
                 trigger = 'after',
                 delay = 0.4,
@@ -149,7 +149,7 @@ SMODS.Joker {
                     return true
                 end
             }))
-            return{
+            return {
                 chips = card.ability.extra.chips
             }
         end
@@ -167,22 +167,54 @@ SMODS.Joker {
         code = "LFMoth",
         idea = "LFMoth"
     },
+    immutable = true;
     pos = { x = 3, y = 2 },
-    config = { extra = { dollars = 1, joker_count = 0} },
+    config = { extra = { dollars = 1, joker_count = 0 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
         -- You can also do this if you want to make sure everything in the Joker slots is a Joker (blame other mods)
+        card.ability.extra.joker_count = 0
+        for i = 1, #G.jokers.cards do
+            if G.jokers.cards[i].ability.set == 'Joker' then
+                card.ability.extra.joker_count = card.ability.extra
+                    .joker_count + 1
+            end
+        end
+        return { vars = { card.ability.extra.dollars, card.ability.extra.dollars * card.ability.extra.joker_count } }
+    end,
+
+    calculate = function(self, card, context)
+        if context.forcetrigger then
             card.ability.extra.joker_count = 0
             for i = 1, #G.jokers.cards do
-            if G.jokers.cards[i].ability.set == 'Joker' then card.ability.extra.joker_count = card.ability.extra.joker_count + 1 end
+                if G.jokers.cards[i].ability.set == 'Joker' then
+                    card.ability.extra.joker_count = card.ability.extra
+                        .joker_count + 1
+                end
             end
-        return { vars = {card.ability.extra.dollars, card.ability.extra.dollars * card.ability.extra.joker_count } }
+            G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + card.ability.extra.dollars
+            return {
+                dollars = card.ability.extra.dollars * card.ability.extra.joker_count,
+                func = function() -- This is for timing purposes, this goes after the dollar modification
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            G.GAME.dollar_buffer = 0
+                            return true
+                        end
+                    }))
+                end
+            }
+        end
     end,
+
     calc_dollar_bonus = function(self, card)
         card.ability.extra.joker_count = 0
-            for i = 1, #G.jokers.cards do
-            if G.jokers.cards[i].ability.set == 'Joker' then card.ability.extra.joker_count = card.ability.extra.joker_count + 1 end
+        for i = 1, #G.jokers.cards do
+            if G.jokers.cards[i].ability.set == 'Joker' then
+                card.ability.extra.joker_count = card.ability.extra
+                    .joker_count + 1
             end
+        end
         return card.ability.extra.dollars * card.ability.extra.joker_count
     end
 }
