@@ -227,6 +227,13 @@ return {
                     "{C:inactive}(Currently {C:money}$#2#{}{C:inactive})",
                 },
             },
+            j_req_jestercap = {
+                name = "Jester Cap",
+                text = {
+                    "{C:attention}+#1#{} card slot",
+                    "available in shop",
+                },
+            },
         },
         Enhanced = {
             m_req_cat = {

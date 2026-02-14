@@ -218,3 +218,29 @@ SMODS.Joker {
         return card.ability.extra.dollars * card.ability.extra.joker_count
     end
 }
+
+SMODS.Joker {
+    key = "jestercap",
+    atlas = "jokers",
+    pos = { x = 7, y = 2 },
+    rarity = 2,
+    blueprint_compat = false,
+    immutable = false,
+    cost = 4,
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
+    config = { extra = { shop_size = 1 } },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
+        return { vars = { card.ability.extra.shop_size } }
+    end,
+    add_to_deck = function(self, card, context)
+        change_shop_size(card.ability.extra.shop_size)
+    end,
+    remove_from_deck = function(self, card, context)
+        change_shop_size(-card.ability.extra.shop_size)
+    end
+}
