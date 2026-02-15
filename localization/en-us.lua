@@ -234,6 +234,14 @@ return {
                     "available in shop",
                 },
             },
+            j_req_premiumsummonable = {
+                name = "Premium Summonable Joker",
+                text = {
+                    "{C:mult}+#1# Mult{}",
+                    "{C:attention}+#2#{} Hand Size",
+                    "Uses {C:blue}#3#{} extra {C:blue}Hand",
+                },
+            },
         },
         Enhanced = {
             m_req_cat = {

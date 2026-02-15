@@ -197,3 +197,43 @@ SMODS.Joker {
         ease_discard(-card.ability.extra.discards)
     end
 }
+-- Premium Summonable Joker
+SMODS.Joker {
+    key = "premiumsummonable",
+    atlas = "jokers",
+    pos = { x = 3, y = 1 },
+    rarity = 1,
+    blueprint_compat = true,
+    immutable = false,
+    cost = 3,
+    req_credits = {
+        art = "LFMoth",
+        code = "LFMoth",
+        idea = "LFMoth"
+    },
+    config = { extra = { mult = 4, hands = 1, h_size = 3 } },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
+        return { vars = { card.ability.extra.mult, card.ability.extra.h_size, card.ability.extra.hands } }
+    end,
+     add_to_deck = function(self, card, from_debuff)
+        G.hand:change_size(card.ability.extra.h_size)
+    end,
+    remove_from_deck = function(self, card, from_debuff)
+        G.hand:change_size(-card.ability.extra.h_size)
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            ease_hands_played(-card.ability.extra.hands)
+            return {
+                mult = card.ability.extra.mult
+            }
+        end
+        if context.forcetrigger then
+            ease_hands_played(-card.ability.extra.hands)
+            return {
+                mult = card.ability.extra.mult
+            }
+        end
+    end
+}
