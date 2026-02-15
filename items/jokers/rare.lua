@@ -154,7 +154,7 @@ SMODS.Joker {
     rarity = 3,
     blueprint_compat = false,
     immutable = false,
-    cost = 8,
+    cost = 10,
     config = { extra = { needed = 20, current = 0, increase = 1, discards = 0 } },
     req_credits = {
         art = "LFMoth",
@@ -202,10 +202,10 @@ SMODS.Joker {
     key = "premiumsummonable",
     atlas = "jokers",
     pos = { x = 3, y = 1 },
-    rarity = 1,
+    rarity = 3,
     blueprint_compat = true,
     immutable = false,
-    cost = 3,
+    cost = 10,
     req_credits = {
         art = "LFMoth",
         code = "LFMoth",

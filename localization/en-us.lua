@@ -238,7 +238,7 @@ return {
                 name = "Premium Summonable Joker",
                 text = {
                     "{C:mult}+#1# Mult{}",
-                    "{C:attention}+#2#{} Hand Size",
+                    "{C:attention}+#2#{} uiHand Size",
                     "Uses {C:blue}#3#{} extra {C:blue}Hand",
                 },
             },
