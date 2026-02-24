@@ -124,12 +124,21 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.playing_card_added and not context.blueprint then
+            local amt = #context.cards
             G.E_MANAGER:add_event(Event({
                 trigger = 'after',
                 delay = 0.4,
                 func = function()
                     card:juice_up(0.3, 0.5)
-                    card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.increase
+                    SMODS.scale_card(card, {
+                        ref_table = card.ability.extra,
+                        ref_value = "chips",
+                        scalar_value = "increase",
+                        no_message = true,
+                        operation = function(ref_table, ref_value, initial, change)
+                            ref_table[ref_value] = initial + change * amt
+                        end
+                    })
                     return true
                 end
             }))
@@ -145,7 +154,15 @@ SMODS.Joker {
                 delay = 0.4,
                 func = function()
                     card:juice_up(0.3, 0.5)
-                    card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.increase
+                    SMODS.scale_card(card, {
+                        ref_table = card.ability.extra,
+                        ref_value = "chips",
+                        scalar_value = "increase",
+                        no_message = true,
+                        operation = function(ref_table, ref_value, initial, change)
+                            ref_table[ref_value] = initial + change
+                        end
+                    })
                     return true
                 end
             }))
@@ -167,12 +184,12 @@ SMODS.Joker {
         code = "LFMoth",
         idea = "LFMoth"
     },
-    immutable = true;
+    immutable = true,
     pos = { x = 3, y = 2 },
     config = { extra = { dollars = 1, joker_count = 0 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
-        return { vars = { card.ability.extra.dollars} }
+        return { vars = { card.ability.extra.dollars } }
     end,
 
     calculate = function(self, card, context)

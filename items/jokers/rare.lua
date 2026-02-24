@@ -173,7 +173,15 @@ SMODS.Joker {
                 G.E_MANAGER:add_event(Event({
                     func = function()
                         card.ability.extra.current = 0
-                        card.ability.extra.discards = card.ability.extra.discards + card.ability.extra.increase
+                        SMODS.scale_card(card, {
+                        ref_table = card.ability.extra,
+                        ref_value = "discards",
+                        scalar_value = "increase",
+                        no_message = true,
+                        operation = function(ref_table, ref_value, initial, change)
+                            ref_table[ref_value] = initial + change
+                        end
+                    })
                         return true
                     end
                 }))
