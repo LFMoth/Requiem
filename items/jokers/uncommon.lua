@@ -290,7 +290,7 @@ SMODS.Joker {
             local eval = function() return G.GAME.current_round.hands_played == 0 and not G.RESET_JIGGLES end
             juice_card_until(card, eval, true)
         end
-        if context.before and G.GAME.current_round.hands_played == 0 then
+        if context.final_scoring_step and G.GAME.current_round.hands_played == 0 then
             G.E_MANAGER:add_event(Event({
                 trigger = 'after',
                 delay = 0.4,
