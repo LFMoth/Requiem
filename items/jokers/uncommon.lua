@@ -164,7 +164,7 @@ SMODS.Joker {
         info_queue[#info_queue + 1] = { set = "Other", key = "req_credits", vars = { self.req_credits.art, self.req_credits.code, self.req_credits.idea } }
     end,
     calculate = function(self, card, context)
-        if context.end_of_round and context.cardarea == G.jokers and context.beat_boss then
+        if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then  --when boss blind is defeated
             local newedition = Cryptid.poll_random_edition()
             card:set_edition(newedition, true, false)
         end

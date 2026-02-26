@@ -11,7 +11,7 @@
     "badge_colour": "A12B2B",
     "dependencies": [
         "Steamodded (>=1.0.0~BETA-1016a)",
-        "Cryptlib"
+        "Spectrallib"
     ],
     "conflicts": [
     ],

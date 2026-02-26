@@ -25,7 +25,7 @@ SMODS.Joker {
         if context.after and context.cardarea == G.jokers then
             SMODS.add_card { set = "Base", enhancement = "m_req_cat", area = G.hand }
         end
-        if context.end_of_round and context.cardarea == G.jokers and context.beat_boss then
+        if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then  --when boss blind is defeated
             card.ability.progress = card.ability.progress + 1
             if card.ability.progress >= 2 then
                 SMODS.add_card({ key = 'j_req_machocat' })
