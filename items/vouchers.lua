@@ -21,7 +21,7 @@ SMODS.Voucher {
     pos = { x = 2, y = 0 },
     requires = { 'v_req_membership' },
     calculate = function(self, card, context)
-        if context.beat_boss then
+        if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then
             add_tag(Tag('tag_coupon'))
         end
     end,
