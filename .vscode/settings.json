@@ -2,5 +2,9 @@
     "Lua.diagnostics.globals": [
         "if"
     ],
-    "Lua.workspace.library": ["/home/lfmoth/.steam/steam/steamapps/compatdata/2379780/pfx/drive_c/users/steamuser/AppData/Roaming/Balatro/Mods/smods", "/home/lfmoth/.steam/steam/steamapps/compatdata/2379780/pfx/drive_c/users/steamuser/AppData/Roaming/Balatro/Mods/lovely/dump"]
+    "Lua.workspace.library": [
+        "/home/lfmoth/.steam/steam/steamapps/compatdata/2379780/pfx/drive_c/users/steamuser/AppData/Roaming/Balatro/Mods/smods",
+        "/home/lfmoth/.steam/steam/steamapps/compatdata/2379780/pfx/drive_c/users/steamuser/AppData/Roaming/Balatro/Mods/lovely/dump",
+        "/home/lfmoth/.steam/steam/steamapps/compatdata/2379780/pfx/drive_c/users/steamuser/AppData/Roaming/Balatro/Mods/Spectrallib"
+    ]
 }
