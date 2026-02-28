@@ -227,7 +227,7 @@ SMODS.Joker {
         end
     end
 }
--- Investor (doesnt work currently)
+-- Investor
 SMODS.Joker {
     key = "investor",
     atlas = "jokers",
