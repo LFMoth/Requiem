@@ -45,12 +45,65 @@ SMODS.Joker {
         return { vars = { card.ability.extra.increase } }
     end,
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play then
-            if context.other_card:get_id() <= 10 and
-                context.other_card:get_id() >= 0 and
-                context.other_card:get_id() % 2 == 0 then
-                SMODS.modify_rank(context.other_card, card.ability.extra.increase)
+        if context.final_scoring_step then
+            local cards = {}
+            for _, v in ipairs(context.scoring_hand) do
+                if v:get_id() <= 10 and
+                v:get_id() >= 0 and
+                v:get_id() % 2 == 0 then
+                    cards[#cards + 1] = v end -- get all scoring cards that are even           
             end
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.4,
+                func = function()
+                    card:juice_up(0.3, 0.5) -- juice up the joker
+                    return true
+                end
+            }))
+
+            for _, v in ipairs(cards) do
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.2,
+                    func = function()
+                        v:flip() -- flip every cycled card after eachother
+                        play_sound('cardSlide1', 1, 0.6)
+                        return true
+                    end
+                }))
+            end
+
+            delay(0.4)
+
+            for _, v in ipairs(cards) do
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.1,
+                    func = function()
+                        assert(SMODS.modify_rank(v, card.ability.extra.increase)) -- +1 to rank of every even card
+                        play_sound('tarot2', 1, 0.6)
+                        v:juice_up() -- juice up every card after eachother
+                        return true
+                    end
+                }))
+            end
+
+            delay(0.4)
+
+            for _, v in ipairs(cards) do
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.2,
+                    func = function()
+                        v:flip()
+                        play_sound('cardSlide1', 1, 0.6)
+                        return true
+                    end
+                }))
+            end
+
+            delay(0.5)
         end
     end
 }
@@ -300,17 +353,16 @@ SMODS.Joker {
                     return true
                 end
             }))
-            local percent = 1.15 - (1 - 0.999) / (#G.play.cards - 0.998) * 0.3
             G.E_MANAGER:add_event(Event({
                 trigger = 'after',
                 delay = 0.15,
                 func = function()
                     G.play.cards[1]:flip()
-                    play_sound('card1', percent)
+                    play_sound('card1', 1)
                     G.play.cards[1]:juice_up(0.3, 0.3)
 
                     G.play.cards[#G.play.cards]:flip()
-                    play_sound('card1', percent)
+                    play_sound('card1', 1)
                     G.play.cards[#G.play.cards]:juice_up(0.3, 0.3)
                     return true
                 end
@@ -320,7 +372,7 @@ SMODS.Joker {
                 trigger = 'after',
                 delay = 0.1,
                 func = function()
-                    if G.play.cards[1] ~= G.play.cards[#G.play.cards] then
+                    if G.play.cards[1] ~= G.play.cards[#G.play.cards] then 
                         copy_card(G.play.cards[1], G.play.cards[#G.play.cards])
                     end
                     return true
@@ -338,14 +390,6 @@ SMODS.Joker {
                     G.play.cards[#G.play.cards]:flip()
                     play_sound('tarot2', percent, 0.6)
                     G.play.cards[#G.play.cards]:juice_up(0.3, 0.3)
-                    return true
-                end
-            }))
-            G.E_MANAGER:add_event(Event({
-                trigger = 'after',
-                delay = 0.2,
-                func = function()
-                    G.hand:unhighlight_all()
                     return true
                 end
             }))
@@ -374,7 +418,7 @@ SMODS.Joker {
         return { vars = {card.ability.extra.odds, card.ability.extra.denominator, card.ability.extra.denominator2}}
     end,
     calculate = function(self, card, context)
-        if context.end_of_round and context.cardarea == G.jokers then
+        if context.end_of_round and context.main_eval then
             if SMODS.pseudorandom_probability(card, 'req_arc', card.ability.extra.odds, card.ability.extra.denominator) then
                 G.E_MANAGER:add_event(Event({
                     trigger = 'after',

@@ -33,7 +33,7 @@ return {
             j_req_retro = {
                 name = "Retro Joker",
                 text = {
-                    "Played even-numbered cards",
+                    "Scored even-numbered cards",
                     "increase their rank by {C:attention}#1#{}",
                 },
             },
@@ -237,7 +237,7 @@ return {
                 name = "Premium Summonable Joker",
                 text = {
                     "{C:mult}+#1# Mult{}",
-                    "{C:attention}+#2#{} uiHand Size",
+                    "{C:attention}+#2#{} Hand Size",
                     "Uses {C:blue}#3#{} extra {C:blue}Hand",
                 },
             },
